@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -28,7 +33,7 @@
         </nav>
         <section id="desc">
         <div id="anunc">
-            <h1 id="decore">DECORE A<br>SUA CASA</h1>
+            <h1 class="decore">DECORE A<br>SUA CASA</h1>
             <a href="#" id="botao1">eu quero!</a>
         </div>
         <article>
@@ -49,6 +54,271 @@
         </article>
         </section>
     </header>
-    
+    <section id="destaques">
+        <h1 id="titdesc" class="decore">destaques da semana</h1>
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="wrapper">
+                    <div class="product">
+                        <div class="bga">
+                            <img src="image1.png"  alt="...">
+                        </div>
+                        <h1>Vaso ornamentado - 40cm PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 120,00</span> ou 3x R$ 40,00</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="bga">
+                            <img src="image2.png"  alt="...">
+                        </div>
+                        <h1>Kit 3 vasos - Ambiente Externo PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 199,90</span> ou 4x R$ 49,90</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="bga">
+                            <img src="image3.png" id="buda" alt="...">
+                        </div>
+                        <h1>Estatua Buda - 40cm PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 99,90</span> ou 2x R$ 49,90</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="wrapper">
+                    <div class="product">
+                        <div class="bga">
+                            <img src="D_NQ_NP_943571-MLB46881873244_072021-W-removebg-preview.png"  alt="...">
+                        </div>
+                        <h1>Estatua Cristo - 90cm PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 250,00</span> ou 5x R$ 49,90</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="bga">
+                            <img src="preco-medio-custo-banco-de-concreto-pre-moldado-removebg-preview.png"  alt="..." style="width: 200%;">
+                        </div>
+                        <h1>Banco Cimento - Ambiente Externo PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 400,00</span> ou 4x R$ 99,90</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="bga">
+                            <img src="Elemento Vazado Taco Chinês 39x39x7_1.png" id="buda" alt="...">
+                        </div>
+                        <h1>Cobogó - 30x30cm <br>PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 29,90</span> à unidade</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="wrapper">
+                    <div class="product">
+                        <div class="bga">
+                            <img src="image1.png"  alt="...">
+                        </div>
+                        <h1>Vaso ornamentado - 40cm PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 120,00</span> ou 3x R$ 40,00</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="bga">
+                            <img src="image2.png"  alt="...">
+                        </div>
+                        <h1>Kit 3 vasos - Ambiente Externo PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 199,90</span> ou 4x R$ 49,90</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product">
+                        <div class="bga">
+                            <img src="image3.png" id="buda" alt="...">
+                        </div>
+                        <h1>Estatua Buda - 40cm PRIMAVERA</h1>
+                        <div class="preco">
+                            <p><span>R$ 99,90</span> ou 2x R$ 49,90</p>
+                            <div class="areacompra">
+                                <button type="button" class="btncomprar">comprar</button>
+                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        
+    </section>
+
+    <section id="blog">
+        <h1 id="blogtit" class="decore">blog</h1>
+        <div class="wrapper2">
+            <div class="blogimg"><img src="image 4.png"><h1>Como envasar e cuidar de  suculentas?</h1><p>Quer aprender a como envasar e regar suas suculentas? nosso especialista te conta como manter suas plantas saudaveis!</p><a href="#">Saiba mais!</a></div>
+            <div class="blogimg"><img src="image 7.png"><h1>Horta em apartamento, é possivel?</h1><p>Sabia que é possivel construir uma mini horta, dentro do seu apartamento. Confira as dicas utilizando os produtos PRIMAVERA!</p><a href="#">Saiba mais!</a></div>
+            <div class="blogimg"><img src="image 8.png"><h1>Confira dicas incriveis de decoração!</h1><p>Aprenda a como criar um ambiente harmonioso e acolhedor para a sua casa! Confira nossa dicas, utilizando os produtos PRIMAVERA!</p><a href="#">Saiba mais!</a></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="divisao">
+            <img src="primavera.png">
+            <a class="links" href="#">entre em contato ></a>
+            <a class="links" href="#">whatsapp ></a>
+            <a class="links" href="#" data-bs-toggle="modal" data-bs-target="#ModalCEP">area de entrega ></a>
+            <a class="links" href="#">duvidas frequentes ></a>
+        </div>
+        <div class="divisao">
+            <div id="logos">
+                <a id="midiasocial" href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a id="fb" href="#"><i class="fa-brands fa-facebook fa-3x"></i></a>
+            </div>
+            <a id="container" href="#">
+                <i id="cima" class="fa-solid fa-arrow-up fa-1x"></i>
+                <p>voltar ao topo</p>
+            </a>
+            <a id="termos" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Politica de privacidade | Termos de uso</a>
+        </div>
+        <div class="divisao">
+            <h4>Formas de pagamento</h4>
+            <div id="cartoes">
+                <i class="fa-brands fa-cc-visa fa-3x"></i>
+                <i class="fa-brands fa-cc-mastercard fa-3x"></i>
+                <i class="fa-brands fa-cc-amex fa-3x"></i>
+                <i class="fa-brands fa-pix fa-3x"></i>
+                <i class="fa-solid fa-barcode fa-3x"></i>
+                <i class="fa-solid fa-money-bill-transfer fa-3x"></i>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Politica de privacidade | Termos de uso</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Politíca de privacidade</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Termos de uso</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active textterms" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                        <h2><span style="color: rgb(68, 68, 68);">Política Privacidade</span></h2><p><span style="color: rgb(68, 68, 68);">A sua privacidade é importante para nós. É política do primavera.com.br respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="#">primavera.com.br</a>, e outros sites que possuímos e operamos.</span></p><p><span style="color: rgb(68, 68, 68);">Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</span></p><p><span style="color: rgb(68, 68, 68);">Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</span></p><p><span style="color: rgb(68, 68, 68);">Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</span></p><p><span style="color: rgb(68, 68, 68);">O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas&nbsp;</span>políticas de privacidade<span style="color: rgb(68, 68, 68);">.</span></p><p><span style="color: rgb(68, 68, 68);">Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</span></p><p><span style="color: rgb(68, 68, 68);">O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</span></p><p><span style="color: rgb(68, 68, 68);"><ul><li><span style="color: rgb(68, 68, 68);">O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado anúncio é exibido para você.</span></li><li><span style="color: rgb(68, 68, 68);">Para mais informações sobre o Google AdSense, consulte as FAQs oficiais sobre privacidade do Google AdSense.</span></li><li><span style="color: rgb(68, 68, 68);">Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados ​​por este site foram projetados para garantir que você forneça os anúncios mais relevantes sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes que possam ser do seu interesse.</span></li><li><span style="color: rgb(68, 68, 68);">Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra.</span></li></ul><p><br></p></span></p><h3><span style="color: rgb(68, 68, 68);">Compromisso do Usuário</span></h3><p><span style="color: rgb(68, 68, 68);">O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o primavera.com.br oferece no site e com caráter enunciativo, mas não limitativo:</span></p><ul><li><span style="color: rgb(68, 68, 68);">A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</span></li><li><span style="color: rgb(68, 68, 68);">B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, </span><span style="color: rgb(33, 37, 41);"><a href='https://apostasonline.guru/bet365-apostas/' style='color:inherit !important; text-decoration: none !important; font-size: inherit !important;'>bet365 brasil</a></span><span style="color: rgb(68, 68, 68);"> ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</span></li><li><span style="color: rgb(68, 68, 68);">C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do primavera.com.br, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</span></li></ul><h3><span style="color: rgb(68, 68, 68);">Mais informações</span></h3><p><span style="color: rgb(68, 68, 68);">Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</span></p><p><span style="color: rgb(68, 68, 68);">Esta política é efetiva a partir de&nbsp;24 May 2023 18:03</span></p>
+                    </div>
+                    <div class="tab-pane fade textterms" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <h2><span style="color: rgb(68, 68, 68);">1. Termos</span></h2><p><span style="color: rgb(68, 68, 68);">Ao acessar ao site <a href="#">primavera.com.br</a>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</span></p><h2><span style="color: rgb(68, 68, 68);">2. Uso de Licença</span></h2><p><span style="color: rgb(68, 68, 68);">É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site primavera.com.br , apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:&nbsp;</span></p><ol><li><span style="color: rgb(68, 68, 68);">modificar ou copiar os materiais;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">tentar descompilar ou fazer engenharia reversa de qualquer software contido no site primavera.com.br;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</span></li></ol><p><span style="color: rgb(68, 68, 68);">Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por primavera.com.br a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrónico ou impresso.</span></p><h2><span style="color: rgb(68, 68, 68);">3. Isenção de responsabilidade</span></h2><ol><li><span style="color: rgb(68, 68, 68);">Os materiais no site da primavera.com.br são fornecidos 'como estão'. primavera.com.br não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</span></li><li><span style="color: rgb(68, 68, 68);">Além disso, o primavera.com.br não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ​​ou à confiabilidade do uso dos materiais em seu site ou de outra forma relacionado a esses materiais ou em sites vinculados a este site.</span></li></ol><h2><span style="color: rgb(68, 68, 68);">4. Limitações</span></h2><p><span style="color: rgb(68, 68, 68);">Em nenhum caso o primavera.com.br ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em primavera.com.br, mesmo que primavera.com.br ou um representante autorizado da primavera.com.br tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos conseqüentes ou incidentais, essas limitações podem não se aplicar a você.</span></p><h2><span style="color: rgb(68, 68, 68);">5. Precisão dos materiais</span></h2><p><span style="color: rgb(68, 68, 68);">Os materiais exibidos no site da primavera.com.br podem incluir erros técnicos, tipográficos ou fotográficos. primavera.com.br não garante que qualquer material em seu site seja preciso, completo ou atual. primavera.com.br pode fazer alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto, primavera.com.br não se compromete a atualizar os materiais.</span></p><h2><span style="color: rgb(68, 68, 68);">6. Links</span></h2><p><span style="color: rgb(68, 68, 68);">O primavera.com.br não analisou todos os sites vinculados ao seu site e não é responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não implica endosso por primavera.com.br do site. O uso de qualquer site vinculado é por conta e risco do usuário.</span></p><p><br></p><h3><span style="color: rgb(68, 68, 68);">Modificações</span></h3><p><span style="color: rgb(68, 68, 68);">O primavera.com.br pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.</span></p><h3><span style="color: rgb(68, 68, 68);">Lei aplicável</span></h3><p><span style="color: rgb(68, 68, 68);">Estes termos e condições são regidos e interpretados de acordo com as leis do primavera.com.br e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalCEP" tabindex="-1" role="dialog" aria-labelledby="ModalCEP" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalCEP">Consulta entrega</h5>
+              <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body d-flex justify-content-center flex-column pb-1 align-items-center">
+                <form class="mb-4">
+                <label for="CEP">CEP:
+                    <input type="text" id="CEP" class="form-control" onkeypress="$(this).mask('00000-000')">
+                </label>
+                <input class="btn btn-outline-success" type="button" value="Enviar" onclick="pesquisarCEP()"/>
+                </form>
+                <div class="entrega toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Seu CEP está na nossa lista de entregas! 👏
+                      </div>
+                      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="naoentrega toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Que pena! Ainda não atendemos o seu CEP para entregas. 😔
+                      </div>
+                      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="naoexiste toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Não encontramos seu CEP para consultar. 🤔
+                      </div>
+                      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
-</html>
+</html>     
