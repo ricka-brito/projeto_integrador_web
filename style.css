@@ -2,8 +2,7 @@ body{
     list-style: none;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
-
+    overflow-x:hidden;
 }
 header{
     width: 100vw;
@@ -14,6 +13,8 @@ header{
     background-repeat:no-repeat ;
     background-color: #FDFDFD;
 }
+
+
 nav{
     width: 100vw;
     display: inline-flex;
@@ -27,19 +28,35 @@ nav ul{
     justify-content: space-around;
     width: 22vw;
     align-items: center;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     margin-right: 5%;
     font-size: 1.3vw;
 }
 
+#carrinho li{
+    height: fit-content;
+    width: fit-content;
+
+}
+
+#carrinho{
+    height: fit-content;
+}
+
+#carrinho svg{
+    width: 70%;
+}
+
 
 nav ul li p{
-    height: fit-content;
     position: absolute;
+    height: fit-content;
     top: 60%;
     left: 50%; 
     transform: translate(-50%, -50%);
-    font-size: 0.9vw;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 nav ul a{
@@ -49,23 +66,33 @@ nav ul a{
     color: black;
 }
 #primavera{
-    background-color: #FCFCFC;
     padding-top: 1%;
     padding-left: 1%;
     height: auto;
     width: 35%;
 }
 
+#menuham{
+    display: none;
+}
+
+#carrinho li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #desc {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 35%;
+    justify-content: center;
+    width: 40%;
     padding-left: 1%;
-    padding-top: 5%;
+    margin-top: 6%;
 }
 
-.decore{
+#decore{
     font-family: 'Nunito Sans', sans-serif;
     color: #0D8F08;
     font-size: 6rem;
@@ -84,14 +111,8 @@ nav ul a{
     padding-right: 4%;
     padding-bottom: 2%;
     padding-top: 2%;
-    transition: all 0.1s ease-in-out;
 }
 
-#botao1:hover {
-    color: white;
-    background-color: #0D8F08;
-    transition: all 0.1s ease-in-out;
-}
 
 #anunc{
     display: flex;
@@ -127,16 +148,18 @@ article{
     color: #0D8F08;
     font-weight: 600;
     font-size: 1.5rem;
+    
 }
 
 #sus{
     letter-spacing: 0.04em;
 }
 
+
 #destaques{
     padding-top: 2%;
-    height: 100vh;
-    width:90%;
+    height: fit-content;
+    width:95%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -155,6 +178,7 @@ article{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 #carouselExample{
@@ -170,7 +194,7 @@ article{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 23vw;
+    width: 100%;
     height: 50vh;
     padding: 15%;
     background-color: #F4F9F3;
@@ -179,12 +203,17 @@ article{
 }
 
 .product{
-    height: 74vh;
-    max-width: 23vw;
+    padding: 5%;
 }
 
 #buda{
     width: 80%;
+}
+
+.modificador{
+    width: 80vw;
+    display: flex;
+    justify-content: space-between;
 }
 
 .product h1{
@@ -237,13 +266,15 @@ article{
 }
 
 #blog{
+    margin-top: 10%;
     margin-left: auto;
     margin-right: auto;
     width: 85%;
-    height: 80vh;
+    height: fit-content;
     background: #F4F9F3;
     display: flex;
-    align-items: center;    
+    align-items: center;
+    justify-content: space-around;    
     flex-direction: column;
     margin-bottom: 20vh;
 }
@@ -251,14 +282,7 @@ article{
 #blogtit{
     margin-top: 1%;
     margin-bottom: 2%;
-    font-size: 4rem;
-}
-
-.wrapper2{
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: 1fr 1fr 1fr;
+    font-size: 3rem;
 }
 
 .blogimg{
@@ -271,6 +295,7 @@ article{
 .blogimg img{
     width: 80%;
     height: auto;
+    background-color: transparent;
 }
 
 .blogimg h1{
@@ -298,6 +323,196 @@ article{
     text-decoration: none;
     width: 77%;
 }
+
+@media (max-width: 1660px){
+    #decore{
+        width: max-content;
+        font-size: 5rem;
+    }
+    header{
+        background-size: cover;
+        background-position: 40%;
+    }
+    #opcs{
+        font-size: 1.3rem;
+    }
+
+    nav ul{
+        width:22vw;
+        margin-left:0;
+        padding-left: 0;
+    }
+
+    #carrinho li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #carrinho svg{
+        width: 70%;
+    }
+}
+
+@media (max-width: 1200px){
+    #decore{
+        width: max-content;
+        font-size: 4.5rem;
+    }
+    #botao1{
+        font-size: 1.5rem;
+    }
+    #opcs{
+        font-size: 1.1rem;
+    }
+    nav ul{
+        width:25vw;
+        margin-left:0;
+        padding-left: 0;
+    }
+
+    #carrinho li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #carrinho svg{
+        width: 70%;
+    }
+    article{
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .recomend{
+        width: fit-content;
+    }
+
+
+}
+
+
+
+@media (max-width: 1000px){
+
+    #decore{
+        margin-top: 40%;
+        width: max-content;
+        font-size: 4rem;
+    }
+
+    #botao1{
+        font-size: 1.5rem;
+    }
+    #opcs{
+        font-size: 1rem;
+    }
+    nav ul{
+        width:25vw;
+        margin-left:0;
+        padding-left: 0;
+    }
+
+    #carrinho li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #carrinho svg{
+        width: 70%;
+    }
+}
+
+@media(max-width: 995px) {
+    header{
+        background-image: url(Design\ sem\ nome.png);
+        background-size:20%;
+        background-repeat: repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #opcs{
+        display: none;
+    }
+    nav{
+        justify-content: space-around;
+    }
+
+    nav ul{
+        width:auto;
+        margin-left:0;
+        padding-left: 0;
+    }
+
+    #primavera{
+        width: 45%;
+
+    }
+    #carrinho svg{
+        width: 70%;
+    }
+
+    #carrinho li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    #menuham{
+        display: flex;
+    }
+
+    #decore{
+        margin-top: 30%;
+        width: max-content;
+        font-size: 6rem;
+        margin-left: 0%;
+    }
+
+    #botao1{
+        margin-left: 0%;
+        font-size: 1.3rem;
+    }
+
+    #desc{
+        width: 80%;
+    }
+
+}
+
+@media(max-width: 600px){
+    #decore{
+        margin-top: 30%;
+        width: max-content;
+        font-size: 5rem;
+        margin-left: 0%;
+    }
+}
+@media(max-width: 480px){
+    #decore{
+        margin-top: 30%;
+        width: max-content;
+        font-size: 4.6rem;
+        margin-left: 0%;
+    }
+}
+
+@media(max-width: 400px){
+    #decore{
+        margin-top: 30%;
+        width: max-content;
+        font-size: 4.3rem;
+        margin-left: 0%;
+    }
+}
+
+
+
 
 footer{
     display: grid;
@@ -431,3 +646,20 @@ footer img{
 .modal-content{
     font-family: 'Nunito Sans';
 }
+
+@media(max-width:994px){
+ .product{
+    width: 70%;
+ }
+ .glide__slide{
+    display: flex;
+    align-items: center;
+    justify-content: center
+ }   
+}
+@media(max-width:800px){
+    .product{
+        width:auto;
+    }
+}
+

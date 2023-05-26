@@ -13,27 +13,47 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" integrity="sha512-wCwx+DYp8LDIaTem/rpXubV/C1WiNRsEVqoztV0NZm8tiTvsUeSlA/Uz02VTGSiqfzAHD4RnqVoevMcRZgYEcQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
     <script src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
     <header>
         <nav>
+            <button id="menuham" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <img src="menu_FILL0_wght400_GRAD0_opsz48.svg">
+              </button>
+          
             <img src="primavera.png" alt="" id="primavera">
             <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Login</a></li>
-                <a href="#"><li><svg width="40" height="56" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <li id="opcs"><a href="#">Início</a></li>
+                <li id="opcs"><a href="#">Produtos</a></li>
+                <li id="opcs"><a href="#">Login</a></li>
+                <a href="#" id="carrinho"><li><svg width="40" height="56" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M4.23083 56C3.08052 56 2.08781 55.5804 1.25268 54.7413C0.41756 53.9022 0 52.9047 0 51.7489V16.0406C0 14.8848 0.41756 13.8873 1.25268 13.0482C2.08781 12.2091 3.08052 11.7895 4.23083 11.7895H11.5359V10.5142C11.5359 7.57058 12.5475 5.08233 14.5708 3.04943C16.594 1.01648 19.0704 0 22 0C24.9296 0 27.406 1.01648 29.4292 3.04943C31.4525 5.08233 32.4641 7.57058 32.4641 10.5142V11.7895H39.7692C40.9195 11.7895 41.9122 12.2091 42.7473 13.0482C43.5824 13.8873 44 14.8848 44 16.0406V51.7489C44 52.9047 43.5824 53.9022 42.7473 54.7413C41.9122 55.5804 40.9195 56 39.7692 56H4.23083ZM4.23083 52.6559H39.7692C39.9948 52.6559 40.2017 52.5614 40.3898 52.3725C40.5778 52.1835 40.6718 51.9757 40.6718 51.7489V16.0406C40.6718 15.8138 40.5778 15.606 40.3898 15.417C40.2017 15.2281 39.9948 15.1336 39.7692 15.1336H32.4641V22.3037C32.4641 22.7784 32.3036 23.1757 31.9825 23.4957C31.6615 23.8157 31.2629 23.9757 30.7867 23.9757C30.3104 23.9757 29.9163 23.8157 29.6042 23.4957C29.292 23.1757 29.1359 22.7784 29.1359 22.3037V15.1336H14.8641V22.3037C14.8641 22.7784 14.7035 23.1757 14.3825 23.4957C14.0614 23.8157 13.6628 23.9757 13.1866 23.9757C12.7104 23.9757 12.3162 23.8157 12.0041 23.4957C11.692 23.1757 11.5359 22.7784 11.5359 22.3037V15.1336H4.23083C4.00516 15.1336 3.79829 15.2281 3.61021 15.417C3.42218 15.606 3.32817 15.8138 3.32817 16.0406V51.7489C3.32817 51.9757 3.42218 52.1835 3.61021 52.3725C3.79829 52.5614 4.00516 52.6559 4.23083 52.6559ZM14.8641 11.7895H29.1359V10.5142C29.1359 8.49635 28.4487 6.79689 27.0742 5.4158C25.6996 4.03466 24.0082 3.34409 22 3.34409C19.9918 3.34409 18.3004 4.03466 16.9258 5.4158C15.5513 6.79689 14.8641 8.49635 14.8641 10.5142V11.7895Z" fill="black"/>
                     </svg>
                     <p>0</p>
                 </li></a>
             </ul>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header align-items-center justify-content-center">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1">
+                    <li class="fs-1"><a href="#">Início</a></li>
+                    <li class="fs-1"><a href="#">Produtos</a></li>
+                    <li class="fs-1"><a href="#">Login</a></li>
+                  </ul>
+                </div>
+              </div>
         </nav>
         <section id="desc">
         <div id="anunc">
-            <h1 class="decore">DECORE A<br>SUA CASA</h1>
+            <h1 id="decore">DECORE A<br>SUA CASA</h1>
             <a href="#" id="botao1">eu quero!</a>
         </div>
         <article>
@@ -55,157 +75,78 @@
         </section>
     </header>
     <section id="destaques">
-        <h1 id="titdesc" class="decore">destaques da semana</h1>
-        <div id="carouselExample" class="carousel slide">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="wrapper">
-                    <div class="product">
-                        <div class="bga">
-                            <img src="image1.png"  alt="...">
-                        </div>
-                        <h1>Vaso ornamentado - 40cm PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 120,00</span> ou 3x R$ 40,00</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+        <div class="container modificador">
+            <div class="glide">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="product">
+                            <div class="bga">
+                                <img src="image1.png"  alt="...">
+                            </div>
+                            <h1>Vaso ornamentado - 40cm PRIMAVERA</h1>
+                            <div class="preco">
+                                <p><span>R$ 120,00</span> ou 3x R$ 40,00</p>
+                                <div class="areacompra">
+                                    <button type="button" class="btncomprar">comprar</button>
+                                    <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product">
-                        <div class="bga">
-                            <img src="image2.png"  alt="...">
-                        </div>
-                        <h1>Kit 3 vasos - Ambiente Externo PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 199,90</span> ou 4x R$ 49,90</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="product">
+                            <div class="bga">
+                                <img src="image2.png"  alt="...">
+                            </div>
+                            <h1>Kit 3 vasos - Ambiente Externo PRIMAVERA</h1>
+                            <div class="preco">
+                                <p><span>R$ 199,90</span> ou 4x R$ 49,90</p>
+                                <div class="areacompra">
+                                    <button type="button" class="btncomprar">comprar</button>
+                                    <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="product">
-                        <div class="bga">
-                            <img src="image3.png" id="buda" alt="...">
-                        </div>
-                        <h1>Estatua Buda - 40cm PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 99,90</span> ou 2x R$ 49,90</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="product">
+                            <div class="bga">
+                                <img src="image3.png" id="buda" alt="...">
+                            </div>
+                            <h1>Estatua Buda - 40cm PRIMAVERA</h1>
+                            <div class="preco">
+                                <p><span>R$ 99,90</span> ou 2x R$ 49,90</p>
+                                <div class="areacompra">
+                                    <button type="button" class="btncomprar">comprar</button>
+                                    <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </li>
+                  </ul>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="wrapper">
-                    <div class="product">
-                        <div class="bga">
-                            <img src="D_NQ_NP_943571-MLB46881873244_072021-W-removebg-preview.png"  alt="...">
-                        </div>
-                        <h1>Estatua Cristo - 90cm PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 250,00</span> ou 5x R$ 49,90</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="bga">
-                            <img src="preco-medio-custo-banco-de-concreto-pre-moldado-removebg-preview.png"  alt="..." style="width: 200%;">
-                        </div>
-                        <h1>Banco Cimento - Ambiente Externo PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 400,00</span> ou 4x R$ 99,90</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="bga">
-                            <img src="Elemento Vazado Taco Chinês 39x39x7_1.png" id="buda" alt="...">
-                        </div>
-                        <h1>Cobogó - 30x30cm <br>PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 29,90</span> à unidade</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="wrapper">
-                    <div class="product">
-                        <div class="bga">
-                            <img src="image1.png"  alt="...">
-                        </div>
-                        <h1>Vaso ornamentado - 40cm PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 120,00</span> ou 3x R$ 40,00</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="bga">
-                            <img src="image2.png"  alt="...">
-                        </div>
-                        <h1>Kit 3 vasos - Ambiente Externo PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 199,90</span> ou 4x R$ 49,90</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="bga">
-                            <img src="image3.png" id="buda" alt="...">
-                        </div>
-                        <h1>Estatua Buda - 40cm PRIMAVERA</h1>
-                        <div class="preco">
-                            <p><span>R$ 99,90</span> ou 2x R$ 49,90</p>
-                            <div class="areacompra">
-                                <button type="button" class="btncomprar">comprar</button>
-                                <button type="button" class="btncarrinho"><img src="add_shopping_cart_FILL0_wght400_GRAD0_opsz48.svg" alt="" ></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        
+        </div>
     </section>
-
     <section id="blog">
         <h1 id="blogtit" class="decore">blog</h1>
-        <div class="wrapper2">
-            <div class="blogimg"><img src="image 4.png"><h1>Como envasar e cuidar de  suculentas?</h1><p>Quer aprender a como envasar e regar suas suculentas? nosso especialista te conta como manter suas plantas saudaveis!</p><a href="#">Saiba mais!</a></div>
-            <div class="blogimg"><img src="image 7.png"><h1>Horta em apartamento, é possivel?</h1><p>Sabia que é possivel construir uma mini horta, dentro do seu apartamento. Confira as dicas utilizando os produtos PRIMAVERA!</p><a href="#">Saiba mais!</a></div>
-            <div class="blogimg"><img src="image 8.png"><h1>Confira dicas incriveis de decoração!</h1><p>Aprenda a como criar um ambiente harmonioso e acolhedor para a sua casa! Confira nossa dicas, utilizando os produtos PRIMAVERA!</p><a href="#">Saiba mais!</a></div>
+        <div class="container wrapper2">
+            <div class="glide2">
+                <div class="glide__track" data-glide-el="track">
+                  <ul class="glide__slides">
+                    <li class="glide__slide">
+                        <div class="blogimg"><img src="image 4.png"><h1>Como envasar e cuidar de  suculentas?</h1><p>Quer aprender a como envasar e regar suas suculentas? nosso especialista te conta como manter suas plantas saudaveis!</p><a href="#">Saiba mais!</a></div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="blogimg"><img src="image 7.png"><h1>Horta em apartamento, é possivel?</h1><p>Sabia que é possivel construir uma mini horta, dentro do seu apartamento. Confira as dicas utilizando os produtos PRIMAVERA!</p><a href="#">Saiba mais!</a></div>
+                    </li>
+                    <li class="glide__slide">
+                        <div class="blogimg"><img src="image 8.png"><h1>Confira dicas incriveis de decoração!</h1><p>Aprenda a como criar um ambiente harmonioso e acolhedor para a sua casa! Confira nossa dicas, utilizando os produtos PRIMAVERA!</p><a href="#">Saiba mais!</a></div>
+                    </li>
+                  </ul>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -319,6 +260,40 @@
           </div>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script>
+        const config = {
+            type: 'carousel',
+            startAt: 0,
+            perView:3,
+            breakpoints: {
+                1300:{
+                    perView: 2
+                },
+                994:{
+                    perView: 1
+                }
+            }
+        }
+        new Glide('.glide', config).mount()
+
+        new Glide('.glide2', {
+                    type: 'carousel',
+                    perView:3,
+                    touchAngle: 0,
+                    breakpoints: {
+                        1300:{
+                            perView: 2,
+                            touchAngle: 45 
+
+                        },
+                        994:{
+                            perView: 1,
+                            touchAngle: 45
+                        }
+                    }
+                }).mount()
+    </script>
 </body>
 </html>     
