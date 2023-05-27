@@ -1,6 +1,7 @@
 async function pesquisarCEP(){
     var cidades = ['Campinas', 'Hortolândia', 'Monte Mor', 'Sumaré', 'Valinhos', 'Vinhedo', 'Louveira', 'Paulínia', 'Nova Odessa'];
 
+    
 
     const cep = document.getElementById('CEP').value.replace('-', '');
     const url = `https://viacep.com.br/ws/${cep}/json/`;
