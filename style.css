@@ -5,8 +5,8 @@ body{
     overflow-x:hidden;
 }
 header{
+    padding-top: 10%;
     width: 100vw;
-    height: 100vh;
     background-image: url(fundo.png);
     background-position: right;
     background-size:contain;
@@ -20,6 +20,15 @@ nav{
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
+    position:fixed;
+    top:0;
+    z-index: 100;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.scrolled{
+    background-color: rgba(255, 255, 255, 0.549);
+    backdrop-filter: blur(5px);
 }
 
 nav ul{
@@ -28,10 +37,12 @@ nav ul{
     justify-content: space-around;
     width: 22vw;
     align-items: center;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     margin-right: 5%;
     font-size: 1.3vw;
 }
+
+
 
 #carrinho li{
     height: fit-content;
@@ -41,6 +52,9 @@ nav ul{
 
 #carrinho{
     height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #carrinho svg{
@@ -48,7 +62,7 @@ nav ul{
 }
 
 
-nav ul li p{
+#itens{
     position: absolute;
     height: fit-content;
     top: 60%;
@@ -63,8 +77,15 @@ nav ul a{
     position: relative;
     height: fit-content;
     text-decoration: none;
-    color: black;
+    color: #000;
+    transition: all 0.2s ease-in-out;
 }
+
+nav ul li:hover{
+    transform: scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+
 #primavera{
     padding-top: 1%;
     padding-left: 1%;
@@ -130,6 +151,7 @@ article{
     justify-content: space-around;
     width: 100%;
     margin-top: 20%;
+    margin-bottom: 20%;
 }
 
 .recomend{
@@ -160,6 +182,9 @@ article{
     letter-spacing: 0.04em;
 }
 
+.dropdown-menu{
+    width: 400px;
+}
 
 #destaques{
     padding-top: 2%;
@@ -200,11 +225,27 @@ article{
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 50vh;
+    height: 400px;
     padding: 15%;
     background-color: #F4F9F3;
     border-radius: 76px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.bga-mini img{
+    filter: drop-shadow(5px 5px 5px #666666);
+    width:70%;
+}
+
+.bga-mini{
+    margin: 3%;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    border-radius: 20%;
+    background-color: #F4F9F3;
 }
 
 .product{
@@ -266,7 +307,8 @@ article{
     padding-left:2%;
     width: max-content;
 }
-.btncarrinho img{
+.btncarrinho svg{
+    fill: #0D8F08;
     width: 55%;
 }
 
@@ -281,7 +323,7 @@ article{
     align-items: center;
     justify-content: space-around;    
     flex-direction: column;
-    margin-bottom: 20vh;
+    margin-bottom: 120px;
 }
 
 #blogtit{
@@ -339,7 +381,7 @@ article{
         background-size: cover;
         background-position: 40%;
     }
-    #opcs{
+    .opcs{
         font-size: 1.3rem;
     }
 
@@ -368,7 +410,7 @@ article{
     #botao1{
         font-size: 1.5rem;
     }
-    #opcs{
+    .opcs{
         font-size: 1.1rem;
     }
     nav ul{
@@ -411,7 +453,7 @@ article{
     #botao1{
         font-size: 1.5rem;
     }
-    #opcs{
+    .opcs{
         font-size: 1rem;
     }
     nav ul{
@@ -441,17 +483,19 @@ article{
         flex-direction: column;
         align-items: center;
     }
-    #opcs{
+    .opcs{
         display: none;
     }
     nav{
         justify-content: space-around;
+        align-items: center;
     }
 
     nav ul{
         width:auto;
-        margin-left:0;
+        margin-right:0;
         padding-left: 0;
+        margin-top: 3%;
     }
 
     #primavera{
@@ -491,6 +535,18 @@ article{
     article{
         margin-top: 10%;
     }
+    #itens{
+        top:60%;
+        left:50%;
+    }
+
+    .btsadex i{
+        font-size: 1em;
+    }
+
+
+
+
 
 }
 
@@ -636,12 +692,12 @@ footer img{
     font-size: 1rem;
 }
 
-@media(max-width: 830px){
+@media(max-width: 600px){
     #termos{
-        font-size: 0.5rem;
+        width: auto;
     }
     .links{
-        font-size: 0.7rem;
+        width: auto;
     }
 
     #midiasocial{
@@ -660,7 +716,7 @@ footer img{
     grid-template-columns: 1fr 1fr 1fr;
     color: #0D8F08;
     row-gap: 10%;
-    column-gap: 10%;
+    column-gap: 1%;
 }
 
 #cartoes i{
@@ -669,23 +725,59 @@ footer img{
     justify-content: center;
 }
 
-@media(max-width:830px){
+@media(max-width:802px){
     #cartoes{
-        width: fit-content;
-        row-gap: 10%;
-        column-gap: 10%;
-        transform: scale(0.5);
+        width:100%;
+        row-gap: 0;
+        column-gap: 0;
     }
+}
+
+@media(max-width:600px){
+    footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #a { order: 1; }
+    #b { order: 3; }
+    #c { 
+        width: 50%;
+        order: 2; 
+    }
+
+    footer img{
+        margin-top: 2%;
+    }
+    
+
 
     h4{
         text-align: center;
-        width: 50%;
-        margin-top: 10%;
-        margin-bottom: 0;
-        font-size: 1rem;
+        margin-top: 4%;
     }
     #container{
-        font-size: 0.5rem;
+        margin-bottom: 3%;
+    }
+    .dropdown-menu{
+        width: 350px;
+    }
+    .divisao{
+        width: 100vw;
+    }
+}
+
+@media(max-width:600px){
+    .dropdown-menu{
+    width: 350px;
+    }
+
+
+    .bga-mini{
+    }
+
+    .produto{
+        align-items: center;
     }
 }
 
@@ -712,8 +804,128 @@ footer img{
     .product{
         width:auto;
     }
+
+}
+
+@media(max-width:600px){
     #logos{
+        margin-top: 0;
+        margin-bottom: 2% ;
         gap: 1%;
     }
+    .btncomprar{
+        width: 72%;
+    }
+}
+
+#headercarrinho{
+    color: #0D8F08;
+    font-size: 'Nunito Sans';
+}
+
+
+.itenstot{
+    color: #0D8F08;
+    font-family: 'Nunito Sans';
+    font-size: 1rem;
+    margin-left: 2%;
+    margin-right: 2%;
+    height: min-content;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.qtd{
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.qtd a i{
+    color:#0D8F08;
+}
+
+.qtd p{
+    color: #0D8F08;
+    margin-bottom: 0;
+}
+
+.desc{
+    width: 100%;
+    font-weight: 700;
+}
+
+.btn-excud{
+    color: #c6c6c6;
+    float: right;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+}
+
+.btsadex{
+    color: #0D8F08;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    padding: 0;
+    position: relative;
+}
+
+.nomeprodut{
+    font-size: 0.8rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#produtos{
+    max-height: 45vh;
+    overflow-y: scroll;
+}
+
+.soma h4{
+    font-family: 'Nunito Sans';
+    font-size: 1.5rem;
+}
+
+.soma{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.soma p{
+    float: right;
+}
+
+.btncarrinho:active{
+    background-color: #0D8F08;
+}
+
+.btncarrinho:active svg{
+    fill: #fff;
+}
+
+.fa-caret-up{
+    color: #d6dade;
+    right: 2%;
+    top:-2.3%;
+    position: absolute;
+}
+
+@media(max-width:995px){
+    #produtos{
+        max-height: 20vh;
+    }
+}
+
+h4{
+    text-align: center;
 }
 
