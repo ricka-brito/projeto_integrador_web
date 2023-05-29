@@ -208,3 +208,168 @@ function carrinhof(){
   tot.innerHTML = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(totaltodos)
   }
 }
+
+
+var carinho = [
+  {
+      nome: "Kit 3 vasos - Ambiente Externo PRIMAVERA",
+      src: "/assets/img/image2.png",
+      preco: "R$ 199,90",
+      detalhes: " ou 4x R$ 49,90"
+  },
+  {
+      nome: "Vaso ornamentado - 40cm PRIMAVERA",
+      src: "/assets/img/image1.png",
+      preco: "R$ 120,00",
+      detalhes: " ou 3x R$ 40,00"
+  },
+  {
+      nome: "Estatua Buda Grande - 40cm PRIMAVERA",
+      src: "/assets/img/image3.png",
+      preco: "R$ 99,90",
+      detalhes: " ou 2x R$ 49,90"
+  },
+  {
+      nome: "Cobogó Chines Vazado - 40cm PRIMAVERA",
+      src: "/assets/img/Elemento Vazado Taco Chinês 39x39x7_1.png",
+      preco: "R$ 29,90",
+      detalhes: " à unidade"
+  },
+  {
+      nome: "Estatua Cristo Grande - 90cm PRIMAVERA",
+      src: "/assets/img/D_NQ_NP_943571-MLB46881873244_072021-W-removebg-preview.png",
+      preco: "R$ 249,90",
+      detalhes: " ou 5x 49,90"
+  },
+  {
+      nome: "Banco liso Externo - 90cm PRIMAVERA",
+      src: "/assets/img/preco-medio-custo-banco-de-concreto-pre-moldado-removebg-preview.png",
+      preco: "R$ 399,90",
+      detalhes: " ou 4x 99,90"
+  },
+  {
+      nome: "Terra vegetal TERRAL - 3kg PRIMAVERA",
+      src: "/assets/img/e071b6_2bdc93c2a25b47dd8b75cc70ffa469be~mv2.png",
+      preco: "R$ 39,90",
+      detalhes: " à unidade"
+  },
+  {
+      nome: "Kit Balaustre completo - PRIMAVERA",
+      src: "/assets/img/kitbalau.png",
+      preco: "R$ 69,90",
+      detalhes: " por metro"
+  },
+  {
+      nome: "Balaustre avulso - PRIMAVERA",
+      src: "/assets/img/balaustre_concreto_tipo_principe_0_60x13cm_atacadao_lazer_89827906_0002_600x600-removebg-preview.png",
+      preco: "R$ 39,90",
+      detalhes: " à unidade"
+  }
+];
+
+var itensa = 8;
+
+function itens(){
+  var itensb = $(".galeriaprodutos");
+  itensb.empty()
+  for(let i = 0; i<itensa; i++){
+      try{
+        let string = `
+        <div class="product">
+            <div onclick="redireciona(event)" class="bga">
+                <img src="${carinho[i]["src"]}"  alt="...">
+            </div>
+            <h1 onclick="redireciona(event)">${carinho[i]["nome"]}</h1>
+            <div class="preco">
+                <p onclick="redireciona(event)"><span>${carinho[i]["preco"]}</span>${carinho[i]["detalhes"]}</p>
+                <div class="areacompra">
+                    <button type="button"  class="btncomprar">comprar</button>
+                    <button type="button"  class="btncarrinho" onclick="addcarrinho(this)"><svg   xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M465 443V320H341v-60h124V137h60v123h123v60H525v123h-60ZM289.788 976Q260 976 239 954.788q-21-21.213-21-51Q218 874 239.212 853q21.213-21 51-21Q320 832 341 853.212q21 21.213 21 51Q362 934 340.788 955q-21.213 21-51 21Zm404 0Q664 976 643 954.788q-21-21.213-21-51Q622 874 643.212 853q21.213-21 51-21Q724 832 745 853.212q21 21.213 21 51Q766 934 744.788 955q-21.213 21-51 21ZM290 769q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655 600 634 600H334l-62 109h494v60H290Z"/></svg></button>
+                </div>
+            </div>
+        </div>
+        `
+        itensb.append(string)
+      }
+      catch{
+
+      }
+
+  }
+}
+
+function itensfiltro(){
+  var itensb = $(".galeriaprodutos");
+  itensb.empty()
+  for(let i = 0; i<carinho.length; i++){
+      if(carinho[i]["nome"].includes('Buda')){
+        let string = `
+        <div class="product">
+            <div class="bga">
+                <img src="${carinho[i]["src"]}"  alt="...">
+            </div>
+            <h1>${carinho[i]["nome"]}</h1>
+            <div class="preco">
+                <p><span>${carinho[i]["preco"]}</span>${carinho[i]["detalhes"]}</p>
+                <div class="areacompra">
+                    <button type="button"  class="btncomprar">comprar</button>
+                    <button type="button"  class="btncarrinho" onclick="addcarrinho(this)"><svg   xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M465 443V320H341v-60h124V137h60v123h123v60H525v123h-60ZM289.788 976Q260 976 239 954.788q-21-21.213-21-51Q218 874 239.212 853q21.213-21 51-21Q320 832 341 853.212q21 21.213 21 51Q362 934 340.788 955q-21.213 21-51 21Zm404 0Q664 976 643 954.788q-21-21.213-21-51Q622 874 643.212 853q21.213-21 51-21Q724 832 745 853.212q21 21.213 21 51Q766 934 744.788 955q-21.213 21-51 21ZM290 769q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655 600 634 600H334l-62 109h494v60H290Z"/></svg></button>
+                </div>
+            </div>
+        </div>
+        `
+        itensb.append(string)
+      }
+
+  }
+}
+
+function add(){
+  itensa = itensa + 4
+  itens()
+  var itensb = document.getElementsByClassName("galeriaprodutos")[0]
+  console.log(carinho.length)
+  console.log(itensb.childElementCount)
+  if(itensb.childElementCount==carinho.length){
+    document.getElementById("butao1").style.display = "none";
+  }
+}
+
+
+function redireciona(e){
+  console.log(e.target.tagName)
+  switch (e.target.tagName){
+    case "H1":
+      for(let i = 0; i<carinho.length; i++){
+        if(carinho[i].nome == e.target.innerText){
+          window.open(`../produtos.html?id=${i}`, "_self")
+        }
+      }
+      break;
+    case "DIV":
+      for(let i = 0; i<carinho.length; i++){
+        if(carinho[i].nome == e.target.parentNode.querySelector("h1").innerText){
+          window.open(`../produtos.html?id=${i}`, "_self")
+        }
+      }
+    case "IMG":
+      for(let i = 0; i<carinho.length; i++){
+        if(carinho[i].nome == e.target.parentNode.parentNode.querySelector("h1").innerText){
+          window.open(`../produtos.html?id=${i}`, "_self")
+        }
+      }
+    case "P":
+      for(let i = 0; i<carinho.length; i++){
+        if(carinho[i].nome == e.target.parentNode.parentNode.querySelector("h1").innerText){
+          window.open(`../produtos.html?id=${i}`, "_self")
+        }
+      }
+    case "SPAN":
+      for(let i = 0; i<carinho.length; i++){
+        if(carinho[i].nome == e.target.parentNode.parentNode.parentNode.querySelector("h1").innerText){
+          window.open(`../produtos.html?id=${i}`, "_self")
+        }
+      }
+      
+  }
+}

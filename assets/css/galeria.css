@@ -1,0 +1,49 @@
+.galeria{
+    margin-top: 170px;
+    height: fit-content;
+    min-height: 770px;
+    display: flex;
+    flex-direction:column;
+    width: 100%;
+    align-items: center;
+}
+
+#titoprodutos{
+    width: 80%;
+    height: 16vh;
+    background-color: #0D8F08;
+    background-image: url(/assets/img/padraotit.png);
+    background-size: 3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#titoprodutos h4{
+    color: #fff;
+    font-family: 'Nunito Sans';
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.galeriaprodutos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+.bga{
+    padding: 20%;
+}
+
+.bga img{ 
+    width: 80%;
+}
+
+@media(max-width:994px){
+    .product{
+        width: 100%;
+    }
+
+}
