@@ -90,8 +90,10 @@ window.onload = function() {
     carrinhoa = []
     setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
     console.log(getCookie("carrinhoa"))
+    carrinhof()
   }
 
+  
 }
  
 window.onbeforeunload = function a() {
@@ -136,6 +138,28 @@ function addcarrinho(e){
   carrinhof()
 };
 
+function addcarrinhoidi(e){
+  console.log(carrinhoa)
+  let tem = true;
+  let produto = e.parentNode.parentNode.parentNode;
+  for(let i = 0; i < carrinhoa.length; i++){
+    if(carrinhoa[i]["nome"] == produto.querySelector('h1').innerHTML){
+      carrinhoa[i]['quatidade'] = parseInt(carrinhoa[i]['quatidade']) + parseInt(produto.getElementsByClassName('itenstota')[0].innerText);
+      tem = false;
+    }
+  }
+  if(tem){
+    produtojson = {
+      nome: produto.querySelector('h1').innerHTML,
+      preco: produto.querySelector('h2').innerText.replace("R$", ""),
+      quatidade: produto.getElementsByClassName('itenstota')[0].innerText,
+      img: produto.querySelector('img').src
+    }
+    carrinhoa.push(produtojson)
+  }
+  carrinhof()
+};
+
 function addum(e){
   let produto = e.target.parentNode.parentNode.parentNode.parentNode;
   for(let i = 0; i < carrinhoa.length; i++){
@@ -145,6 +169,19 @@ function addum(e){
   }
   carrinhof()
   e.stopPropagation();
+}
+
+function addumprod(e){
+  let produto = e.target.parentNode.parentNode;
+  produto.querySelector("p").innerText = parseInt(produto.querySelector("p").innerText) + 1
+}
+
+function remoumprod(e){
+  let produto = e.target.parentNode.parentNode;
+  if(parseInt(produto.querySelector("p").innerText) == 1){
+    return
+  }
+  produto.querySelector("p").innerText = parseInt(produto.querySelector("p").innerText) - 1
 }
 
 function remoum(e){
@@ -270,6 +307,19 @@ var carinho = [
 var itensa = 8;
 
 function itens(){
+
+  try {
+    carrinhoa = JSON.parse(getCookie("carrinhoa"))
+    carrinhof()
+  }
+  catch{
+    carrinhoa = []
+    setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
+    console.log(getCookie("carrinhoa"))
+    carrinhof()
+  }
+
+
   var itensb = $(".galeriaprodutos");
   itensb.empty()
   for(let i = 0; i<itensa; i++){
@@ -342,34 +392,158 @@ function redireciona(e){
     case "H1":
       for(let i = 0; i<carinho.length; i++){
         if(carinho[i].nome == e.target.innerText){
-          window.open(`../produtos.html?id=${i}`, "_self")
+          window.open(`../produto.html?id=${i}`, "_self")
         }
       }
       break;
     case "DIV":
       for(let i = 0; i<carinho.length; i++){
         if(carinho[i].nome == e.target.parentNode.querySelector("h1").innerText){
-          window.open(`../produtos.html?id=${i}`, "_self")
+          window.open(`../produto.html?id=${i}`, "_self")
         }
       }
+      break
     case "IMG":
       for(let i = 0; i<carinho.length; i++){
         if(carinho[i].nome == e.target.parentNode.parentNode.querySelector("h1").innerText){
-          window.open(`../produtos.html?id=${i}`, "_self")
+          window.open(`../produto.html?id=${i}`, "_self")
         }
       }
+      break
     case "P":
       for(let i = 0; i<carinho.length; i++){
         if(carinho[i].nome == e.target.parentNode.parentNode.querySelector("h1").innerText){
-          window.open(`../produtos.html?id=${i}`, "_self")
+          window.open(`../produto.html?id=${i}`, "_self")
         }
       }
+      break
     case "SPAN":
       for(let i = 0; i<carinho.length; i++){
         if(carinho[i].nome == e.target.parentNode.parentNode.parentNode.querySelector("h1").innerText){
-          window.open(`../produtos.html?id=${i}`, "_self")
+          window.open(`../produto.html?id=${i}`, "_self")
         }
       }
-      
+      break
   }
+}
+
+
+function infosproduto(){
+
+
+  var origin1 = '13185-521';
+  var origin2 = document.getElementById("frete").value;
+
+  let cidadesgratis = ['Campinas', 'Hortolândia', 'Sumaré'];
+  let cidades = ['Campinas', 'Hortolândia', 'Monte Mor', 'Sumaré', 'Valinhos', 'Vinhedo', 'Louveira', 'Paulínia', 'Nova Odessa'];
+
+    
+
+    const cep = document.getElementById('frete').value.replace('-', '');
+    const url = `https://viacep.com.br/ws/${cep}/json/`;
+    fetch(url, {
+      method: 'get' // opcional
+    })
+    .then(function(response) {
+      response.json()
+      .then(function(result) {
+        if(result.erro == true){
+          $(document).ready(function(){
+            $(document).ready(function(){
+              $('.naoexiste').toast('show');
+            });
+            });
+        }
+        else{
+          if(cidades.indexOf(result['localidade']) == -1){
+            $(document).ready(function(){
+              $(document).ready(function(){
+                $('.naoentrega').toast('show');
+              });
+              });
+          }
+          else{
+            if(cidadesgratis.indexOf(result['localidade']) > -1){
+              $(document).ready(function(){
+                $(document).ready(function(){
+                  $('.gratis').toast('show');
+                });
+                });
+                
+          }
+          else{
+            var service = new google.maps.DistanceMatrixService();
+            service.getDistanceMatrix(
+              {
+                origins: [origin1],
+                destinations: [origin2],
+                travelMode: 'DRIVING',
+                unitSystem: 0,  
+              }, callback);
+
+              function callback(response, status) {
+                if (status == 'OK') {
+                  var origins = response.originAddresses;
+                  var destinations = response.destinationAddresses;
+              
+                  for (var i = 0; i < origins.length; i++) {
+                    var results = response.rows[i].elements;
+                    for (var j = 0; j < results.length; j++) {
+                      var element = results[j];
+                      distancea = element.distance.value
+                      console.log(typeof(distancea))
+                      console.log()
+                      document.getElementById("precoa").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(6*((distancea/1000)/9))
+
+                      $(document).ready(function(){
+                        $(document).ready(function(){
+                          $('.precofrete').toast('show');
+                        });
+                        });
+                    }
+                  }
+                }
+              }
+
+
+          }
+          }
+          
+        }
+      })
+    })
+
+
+
+
+  
+}
+
+function definevalores(){
+  try {
+    carrinhoa = JSON.parse(getCookie("carrinhoa"))
+    carrinhof()
+  }
+  catch{
+    carrinhoa = []
+    setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
+    console.log(getCookie("carrinhoa"))
+    carrinhof()
+  }
+
+
+  var params = window.location.search.substring(1).split('&');
+  var paramArray = {};
+  for (var i = 0; i < params.length; i++) {
+      var param = params[i].split('=');
+      paramArray[param[0]] = param[1];
+  }
+
+  let id = paramArray.id
+
+  document.getElementById("imagem").src = carinho[parseInt(id)].src
+  document.getElementById("nomea").innerText = carinho[parseInt(id)].nome
+  document.getElementById("precospan").innerText = carinho[parseInt(id)].preco
+  document.getElementById("conditions").innerText = carinho[parseInt(id)].detalhes + " " + document.getElementById("conditions").innerText
+  
 }

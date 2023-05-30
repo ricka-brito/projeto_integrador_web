@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/detalhes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" integrity="sha512-YQlbvfX5C6Ym6fTUSZ9GZpyB3F92hmQAZTO5YjciedwAaGRI9ccNs4iw2QTCJiSPheUQZomZKHQtuwbHkA9lgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" integrity="sha512-wCwx+DYp8LDIaTem/rpXubV/C1WiNRsEVqoztV0NZm8tiTvsUeSlA/Uz02VTGSiqfzAHD4RnqVoevMcRZgYEcQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+    <script src="/assets/javascript/script.js"></script>    
+    <title>Document</title>
+</head>
+<body onload="definevalores()">
+        <nav>
+            <button id="menuham" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <img src="/assets/img/menu_FILL0_wght400_GRAD0_opsz48.svg">
+              </button>
+          
+            <img src="/assets/img/primavera.png" alt="" id="primavera">
+            <ul>
+                <li class="opcs"><a href="index.html">Início</a></li>
+                <li class="opcs"><a style="color: #0D8F08;" href="produtos.html">Produtos</a></li>
+                <li class="opcs"><a href="#">Login</a></li>
+                <div class="dropdown">
+                    <a class='dropdown' href="#" id="carrinho" role="button" data-bs-toggle="dropdown"  data-bs-auto-close="outside" aria-expanded="false">
+                        <svg width="40" height="56" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M4.23083 56C3.08052 56 2.08781 55.5804 1.25268 54.7413C0.41756 53.9022 0 52.9047 0 51.7489V16.0406C0 14.8848 0.41756 13.8873 1.25268 13.0482C2.08781 12.2091 3.08052 11.7895 4.23083 11.7895H11.5359V10.5142C11.5359 7.57058 12.5475 5.08233 14.5708 3.04943C16.594 1.01648 19.0704 0 22 0C24.9296 0 27.406 1.01648 29.4292 3.04943C31.4525 5.08233 32.4641 7.57058 32.4641 10.5142V11.7895H39.7692C40.9195 11.7895 41.9122 12.2091 42.7473 13.0482C43.5824 13.8873 44 14.8848 44 16.0406V51.7489C44 52.9047 43.5824 53.9022 42.7473 54.7413C41.9122 55.5804 40.9195 56 39.7692 56H4.23083ZM4.23083 52.6559H39.7692C39.9948 52.6559 40.2017 52.5614 40.3898 52.3725C40.5778 52.1835 40.6718 51.9757 40.6718 51.7489V16.0406C40.6718 15.8138 40.5778 15.606 40.3898 15.417C40.2017 15.2281 39.9948 15.1336 39.7692 15.1336H32.4641V22.3037C32.4641 22.7784 32.3036 23.1757 31.9825 23.4957C31.6615 23.8157 31.2629 23.9757 30.7867 23.9757C30.3104 23.9757 29.9163 23.8157 29.6042 23.4957C29.292 23.1757 29.1359 22.7784 29.1359 22.3037V15.1336H14.8641V22.3037C14.8641 22.7784 14.7035 23.1757 14.3825 23.4957C14.0614 23.8157 13.6628 23.9757 13.1866 23.9757C12.7104 23.9757 12.3162 23.8157 12.0041 23.4957C11.692 23.1757 11.5359 22.7784 11.5359 22.3037V15.1336H4.23083C4.00516 15.1336 3.79829 15.2281 3.61021 15.417C3.42218 15.606 3.32817 15.8138 3.32817 16.0406V51.7489C3.32817 51.9757 3.42218 52.1835 3.61021 52.3725C3.79829 52.5614 4.00516 52.6559 4.23083 52.6559ZM14.8641 11.7895H29.1359V10.5142C29.1359 8.49635 28.4487 6.79689 27.0742 5.4158C25.6996 4.03466 24.0082 3.34409 22 3.34409C19.9918 3.34409 18.3004 4.03466 16.9258 5.4158C15.5513 6.79689 14.8641 8.49635 14.8641 10.5142V11.7895Z" fill="black"/>
+                        </svg>
+                        <p id="itens">0</p>
+                    </a>
+
+                    <div class="dropdown-menu p-4 mt-3" >
+                        <i class="fa-solid fa-caret-up"></i>
+                        <div id="headercarrinho" class="d-flex align-items-center flex-row border-bottom border-dark-subtle mb-2">
+                            <i class="fa-solid fa-cart-shopping fa-2x mb-2" style="transform: scale(0.6);"></i>
+                            <h3 class="ms-1">seu carrinho</h3>
+                        </div>
+                        <div id="produtos">
+                            <h2 style="color:#0D8F08;" class="d-flex align-items-center flex-column p-4 text-center"><i class="fa-solid fa-cart-shopping fa-2x mb-4"></i>seu carrinho esta vazio</h2>
+                        </div>
+                        <div class="total mt-3 border-top border-dark-subtle pt-3">
+                            <div class="soma d-flex mb-2">
+                                <h4>total</h4>
+                                <p id="valortotal">R$ 0,00</p>
+                            </div>
+                            <button class="btn btn-outline-success" style="border-radius: 0; float: right;">Finalizar compra</button>
+                        </div>
+                    </div>
+                </div>
+            </ul>
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header align-items-center justify-content-center">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                  <ul class="navbar-nav justify-content-end flex-grow-1">
+                    <li class="fs-1"><a  href="#">Início</a></li>
+                    <li class="fs-1"><a href="#">Produtos</a></li>
+                    <li class="fs-1"><a href="#">Login</a></li>
+                  </ul>
+                </div>
+              </div>
+        </nav>
+    <div id="produtopage">
+        <div class="bga">
+            <img id="imagem" src=""  alt="...">
+        </div>
+        <div id="details">
+            <h1 id="nomea"></h1>
+            <h2 id="precospan"></h2>
+            <p id="conditions"></p>
+            <div class="d-flex addcar">
+                <button onclick="remoumprod(event)" class="btsadex"><i class="fa-solid fa-circle-minus fa-2x "></i></button>                                
+                <p class="itenstota">1</p>
+                <button onclick="addumprod(event)" class="btsadex"><i class="fa-solid fa-circle-plus fa-2x "></i></button>
+                <button type="button" class="d-flex btncarrinho" onclick="addcarrinhoidi(this)"><svg  fill="#0D8F08" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32"><path d="M465 443V320H341v-60h124V137h60v123h123v60H525v123h-60ZM289.788 976Q260 976 239 954.788q-21-21.213-21-51Q218 874 239.212 853q21.213-21 51-21Q320 832 341 853.212q21 21.213 21 51Q362 934 340.788 955q-21.213 21-51 21Zm404 0Q664 976 643 954.788q-21-21.213-21-51Q622 874 643.212 853q21.213-21 51-21Q724 832 745 853.212q21 21.213 21 51Q766 934 744.788 955q-21.213 21-51 21ZM290 769q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655 600 634 600H334l-62 109h494v60H290Z"/></svg><h2>Adicionar ao carrinho</h2></button>
+            </div>
+            <form class="teste mb-4">
+                <h5>Consulte seu frete</h5>
+                <label for="CEP">CEP:
+                    <input type="text" id="frete" class="form-control" onkeypress="$(this).mask('00000-000')">
+                </label>
+                <input class="btn btn-outline-success" type="button" value="Enviar" onclick="infosproduto()"/>
+            </form>
+            <div class="gratis toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body">
+                    O frete é gratis para o seu endereço! 
+                  </div>
+                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="naoentrega toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body">
+                    Que pena! Ainda não atendemos o seu CEP para entregas. 😔
+                  </div>
+                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="naoexiste toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body">
+                    Não encontramos seu CEP para consultar. 🤔
+                  </div>
+                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="precofrete toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body">
+                    Padrão - 5 dias uteis - Preço: <span id="precoa"></span> 🚚
+                  </div>
+                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <footer>
+        <div id="a" class="divisao">
+            <img src="/assets/img/primavera.png">
+            <a class="links" href="#">entre em contato ></a>
+            <a class="links" href="#">whatsapp ></a>
+            <a class="links" href="#" data-bs-toggle="modal" data-bs-target="#ModalCEP">area de entrega ></a>
+            <a class="links" href="#">duvidas frequentes ></a>
+        </div>
+        <div id="b" class="divisao">
+            <div id="logos">
+                <a id="midiasocial" href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
+                <a id="fb" href="#"><i class="fa-brands fa-facebook fa-3x"></i></a>
+            </div>
+            <a id="container" href="#">
+                <i id="cima" class="fa-solid fa-arrow-up fa-1x"></i>
+                <p>voltar ao topo</p>
+            </a>
+            <a id="termos" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Politica de privacidade | Termos de uso</a>
+        </div>
+        <div id="c" class="divisao">
+            <h4>Formas de pagamento</h4>
+            <div id="cartoes">
+                <i class="fa-brands fa-cc-visa fa-3x"></i>
+                <i class="fa-brands fa-cc-mastercard fa-3x"></i>
+                <i class="fa-brands fa-cc-amex fa-3x"></i>
+                <i class="fa-brands fa-pix fa-3x"></i>
+                <i class="fa-solid fa-barcode fa-3x"></i>
+                <i class="fa-solid fa-money-bill-transfer fa-3x"></i>
+            </div>
+        </div>
+    </footer>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Politica de privacidade | Termos de uso</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Politíca de privacidade</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Termos de uso</button>
+                    </li>
+                  </ul>
+                  <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active textterms" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                        <h2><span style="color: rgb(68, 68, 68);">Política Privacidade</span></h2><p><span style="color: rgb(68, 68, 68);">A sua privacidade é importante para nós. É política do primavera.com.br respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="#">primavera.com.br</a>, e outros sites que possuímos e operamos.</span></p><p><span style="color: rgb(68, 68, 68);">Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</span></p><p><span style="color: rgb(68, 68, 68);">Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</span></p><p><span style="color: rgb(68, 68, 68);">Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</span></p><p><span style="color: rgb(68, 68, 68);">O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas&nbsp;</span>políticas de privacidade<span style="color: rgb(68, 68, 68);">.</span></p><p><span style="color: rgb(68, 68, 68);">Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</span></p><p><span style="color: rgb(68, 68, 68);">O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</span></p><p><span style="color: rgb(68, 68, 68);"><ul><li><span style="color: rgb(68, 68, 68);">O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado anúncio é exibido para você.</span></li><li><span style="color: rgb(68, 68, 68);">Para mais informações sobre o Google AdSense, consulte as FAQs oficiais sobre privacidade do Google AdSense.</span></li><li><span style="color: rgb(68, 68, 68);">Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados ​​por este site foram projetados para garantir que você forneça os anúncios mais relevantes sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes que possam ser do seu interesse.</span></li><li><span style="color: rgb(68, 68, 68);">Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra.</span></li></ul><p><br></p></span></p><h3><span style="color: rgb(68, 68, 68);">Compromisso do Usuário</span></h3><p><span style="color: rgb(68, 68, 68);">O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o primavera.com.br oferece no site e com caráter enunciativo, mas não limitativo:</span></p><ul><li><span style="color: rgb(68, 68, 68);">A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</span></li><li><span style="color: rgb(68, 68, 68);">B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, </span><span style="color: rgb(33, 37, 41);"><a href='https://apostasonline.guru/bet365-apostas/' style='color:inherit !important; text-decoration: none !important; font-size: inherit !important;'>bet365 brasil</a></span><span style="color: rgb(68, 68, 68);"> ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</span></li><li><span style="color: rgb(68, 68, 68);">C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do primavera.com.br, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</span></li></ul><h3><span style="color: rgb(68, 68, 68);">Mais informações</span></h3><p><span style="color: rgb(68, 68, 68);">Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</span></p><p><span style="color: rgb(68, 68, 68);">Esta política é efetiva a partir de&nbsp;24 May 2023 18:03</span></p>
+                    </div>
+                    <div class="tab-pane fade textterms" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                        <h2><span style="color: rgb(68, 68, 68);">1. Termos</span></h2><p><span style="color: rgb(68, 68, 68);">Ao acessar ao site <a href="#">primavera.com.br</a>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</span></p><h2><span style="color: rgb(68, 68, 68);">2. Uso de Licença</span></h2><p><span style="color: rgb(68, 68, 68);">É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site primavera.com.br , apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:&nbsp;</span></p><ol><li><span style="color: rgb(68, 68, 68);">modificar ou copiar os materiais;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">tentar descompilar ou fazer engenharia reversa de qualquer software contido no site primavera.com.br;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</span></li></ol><p><span style="color: rgb(68, 68, 68);">Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por primavera.com.br a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrónico ou impresso.</span></p><h2><span style="color: rgb(68, 68, 68);">3. Isenção de responsabilidade</span></h2><ol><li><span style="color: rgb(68, 68, 68);">Os materiais no site da primavera.com.br são fornecidos 'como estão'. primavera.com.br não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</span></li><li><span style="color: rgb(68, 68, 68);">Além disso, o primavera.com.br não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ​​ou à confiabilidade do uso dos materiais em seu site ou de outra forma relacionado a esses materiais ou em sites vinculados a este site.</span></li></ol><h2><span style="color: rgb(68, 68, 68);">4. Limitações</span></h2><p><span style="color: rgb(68, 68, 68);">Em nenhum caso o primavera.com.br ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em primavera.com.br, mesmo que primavera.com.br ou um representante autorizado da primavera.com.br tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos conseqüentes ou incidentais, essas limitações podem não se aplicar a você.</span></p><h2><span style="color: rgb(68, 68, 68);">5. Precisão dos materiais</span></h2><p><span style="color: rgb(68, 68, 68);">Os materiais exibidos no site da primavera.com.br podem incluir erros técnicos, tipográficos ou fotográficos. primavera.com.br não garante que qualquer material em seu site seja preciso, completo ou atual. primavera.com.br pode fazer alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto, primavera.com.br não se compromete a atualizar os materiais.</span></p><h2><span style="color: rgb(68, 68, 68);">6. Links</span></h2><p><span style="color: rgb(68, 68, 68);">O primavera.com.br não analisou todos os sites vinculados ao seu site e não é responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não implica endosso por primavera.com.br do site. O uso de qualquer site vinculado é por conta e risco do usuário.</span></p><p><br></p><h3><span style="color: rgb(68, 68, 68);">Modificações</span></h3><p><span style="color: rgb(68, 68, 68);">O primavera.com.br pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.</span></p><h3><span style="color: rgb(68, 68, 68);">Lei aplicável</span></h3><p><span style="color: rgb(68, 68, 68);">Estes termos e condições são regidos e interpretados de acordo com as leis do primavera.com.br e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.</span></p>
+                    </div>
+                  </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalCEP" tabindex="-1" role="dialog" aria-labelledby="ModalCEP" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalCEP">Consulta entrega</h5>
+              <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body d-flex justify-content-center flex-column pb-1 align-items-center">
+                <form class="mb-4">
+                <label for="CEP">CEP:
+                    <input type="text" id="CEP" class="form-control" onkeypress="$(this).mask('00000-000')">
+                </label>
+                <input class="btn btn-outline-success" type="button" value="Enviar" onclick="pesquisarCEP()"/>
+                </form>
+                <div class="entrega toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Seu CEP está na nossa lista de entregas! 👏
+                      </div>
+                      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="naoentrega toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Que pena! Ainda não atendemos o seu CEP para entregas. 😔
+                      </div>
+                      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div class="naoexiste toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Não encontramos seu CEP para consultar. 🤔
+                      </div>
+                      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKO8rZPQbtZjmS2A2t1-LcQvC-6jIksVI&callback=initMap"></script>    
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+</body>
+</html>     

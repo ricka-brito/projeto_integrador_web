@@ -1,0 +1,107 @@
+#produtopage{
+    margin-top: 25vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 75vh;
+    font-family: 'Nunito Sans';
+    margin-bottom: 3%;
+}
+
+.bga{   
+    margin-left: 12%;
+    height: 650px;
+    width: 78%;
+}
+
+.bga img{
+    width:80%;
+}
+
+#details h1{
+    text-overflow: clip;
+    margin-bottom: 10%;
+}
+
+
+
+.btncarrinho{
+    margin-left: 2%;
+    padding: 1%;
+    width: auto;
+    white-space: nowrap;
+    gap: 3%;
+    align-items: center;
+    justify-content: center;
+}
+    
+
+.btncarrinho h2{
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    font-size: 1.5rem;
+}
+
+.btncarrinho:active h2{
+    color: #fff;
+}
+
+.teste{
+    border-radius: 5%;
+    padding: 3.3%;
+    width: fit-content;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.itenstota{
+    color: #0D8F08;
+    font-family: 'Nunito Sans';
+    font-size: 2rem;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: min-content;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+.addcar{
+    margin-top: 2%;
+    margin-bottom: 15%;
+}
+
+#details{
+    border-radius: 5%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 5%;
+    width: fit-content;
+    height: fit-content;
+}
+
+@media(max-width:1300px){
+    #produtopage{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        height: fit-content;
+        align-items: center;
+    }
+    #details{
+        width: 80%;
+        justify-self: center;
+    }
+    i {
+        font-size: 2em !important;
+    }
+    .btncarrinho h2{
+        margin-bottom: 0 !important;
+        margin-top: 0 !important;
+        font-size: 1rem;
+    }
+    .btncarrinho{
+        justify-content: space-around;
+    }
+    
+}
+
+#conditions{
+    margin-bottom: 4%;
+}
