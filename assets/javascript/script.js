@@ -141,9 +141,10 @@ function addcarrinho(e){
 function addcarrinhoidi(e){
   console.log(carrinhoa)
   let tem = true;
-  let produto = e.parentNode.parentNode.parentNode;
+  let produto = e.parentNode.parentNode.parentNode.parentNode;
+  console.log(produto)
   for(let i = 0; i < carrinhoa.length; i++){
-    if(carrinhoa[i]["nome"] == produto.querySelector('h1').innerHTML){
+    if(carrinhoa[i]["nome"] == produto.querySelector('.divnoma')[0].innerHTML){
       carrinhoa[i]['quatidade'] = parseInt(carrinhoa[i]['quatidade']) + parseInt(produto.getElementsByClassName('itenstota')[0].innerText);
       tem = false;
     }
@@ -301,10 +302,28 @@ var carinho = [
       src: "/assets/img/balaustre_concreto_tipo_principe_0_60x13cm_atacadao_lazer_89827906_0002_600x600-removebg-preview.png",
       preco: "R$ 39,90",
       detalhes: " à unidade"
+  },
+  {
+    nome: "Busto Leão parede - PRIMAVERA",
+    src: "/assets/img/D_NQ_NP_736816-MLB47930416758_102021-W-removebg-preview.png",
+    preco: "R$ 69,90",
+    detalhes: " à unidade"
+  },
+  {
+    nome: "Bloco concreto vazado - PRIMAVERA",
+    src: "/assets/img/artefatos-removebg-preview.png",
+    preco: "R$ 19,90",
+    detalhes: " à unidade"
+  },
+  {
+    nome: "Pisante Jardim Pegadas - PRIMAVERA",
+    src: "/assets/img/PEGADAS-removebg-preview.png",
+    preco: "R$ 39,90",
+    detalhes: " à unidade"
   }
 ];
 
-var itensa = 8;
+var itensa = 12;
 
 function itens(){
 
@@ -322,7 +341,7 @@ function itens(){
 
   var itensb = $(".galeriaprodutos");
   itensb.empty()
-  for(let i = 0; i<itensa; i++){
+  for(let i = 0; i<carinho.length; i++){
       try{
         let string = `
         <div class="product">
@@ -348,19 +367,19 @@ function itens(){
   }
 }
 
-function itensfiltro(){
+function itensfiltro(a){
   var itensb = $(".galeriaprodutos");
   itensb.empty()
   for(let i = 0; i<carinho.length; i++){
-      if(carinho[i]["nome"].includes('Buda')){
+      if(carinho[i]["nome"].toUpperCase().includes(a.value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase())){
         let string = `
         <div class="product">
-            <div class="bga">
+            <div onclick="redireciona(event)" class="bga">
                 <img src="${carinho[i]["src"]}"  alt="...">
             </div>
-            <h1>${carinho[i]["nome"]}</h1>
+            <h1 onclick="redireciona(event)">${carinho[i]["nome"]}</h1>
             <div class="preco">
-                <p><span>${carinho[i]["preco"]}</span>${carinho[i]["detalhes"]}</p>
+                <p onclick="redireciona(event)"><span>${carinho[i]["preco"]}</span>${carinho[i]["detalhes"]}</p>
                 <div class="areacompra">
                     <button type="button"  class="btncomprar">comprar</button>
                     <button type="button"  class="btncarrinho" onclick="addcarrinho(this)"><svg   xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M465 443V320H341v-60h124V137h60v123h123v60H525v123h-60ZM289.788 976Q260 976 239 954.788q-21-21.213-21-51Q218 874 239.212 853q21.213-21 51-21Q320 832 341 853.212q21 21.213 21 51Q362 934 340.788 955q-21.213 21-51 21Zm404 0Q664 976 643 954.788q-21-21.213-21-51Q622 874 643.212 853q21.213-21 51-21Q724 832 745 853.212q21 21.213 21 51Q766 934 744.788 955q-21.213 21-51 21ZM290 769q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655 600 634 600H334l-62 109h494v60H290Z"/></svg></button>
@@ -546,4 +565,13 @@ function definevalores(){
   document.getElementById("precospan").innerText = carinho[parseInt(id)].preco
   document.getElementById("conditions").innerText = carinho[parseInt(id)].detalhes + " " + document.getElementById("conditions").innerText
   
+}
+
+function telaincial(){
+  window.open("../index.html", "_self")
+}
+
+function telaprodutos(){
+  window.open("../produtos.html", "_self")
+
 }

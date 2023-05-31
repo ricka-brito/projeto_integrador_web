@@ -10,12 +10,14 @@
 
 .bga{   
     margin-left: 12%;
-    height: 650px;
+    height: 89%;
     width: 78%;
+    border-radius: 0;
+    justify-self: end;
 }
 
 .bga img{
-    width:80%;
+    width:64%;
 }
 
 #details h1{
@@ -27,19 +29,20 @@
 
 .btncarrinho{
     margin-left: 2%;
-    padding: 1%;
-    width: auto;
+    padding: 6%;
+    width: 15vw;
     white-space: nowrap;
     gap: 3%;
     align-items: center;
     justify-content: center;
+    border-radius: 60px;
 }
     
 
 .btncarrinho h2{
     margin-bottom: 0 !important;
     margin-top: 0 !important;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 .btncarrinho:active h2{
@@ -65,28 +68,83 @@
 }
 
 .addcar{
-    margin-top: 2%;
-    margin-bottom: 15%;
+    flex-direction: column;
 }
 
 #details{
-    border-radius: 5%;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 5%;
+    width: 88%;
+    height: 89.4%;
+}
+
+
+
+#conditions{
+    margin-bottom: 4%;
+}
+
+
+#nomea{
+    font-weight: 800;
+    border-bottom: 1px solid #d6d6d6;
+    padding-bottom: 2%;
+}
+
+#precospan{
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.baixo{
+    justify-content: space-between;
+    align-items: center;
+    bottom: 0;
+}
+
+.btnquanti{
+    justify-content: space-between;
+    width: 15vw;
+    padding: 1%;
+    border: 1px solid #0D8F08;
+    margin-left: 2%;
+    border-radius: 60px;
+    margin-bottom: 6%;
+    background-color: #0D8F08;
+}
+
+.btsadex i{
+    border-radius: 50%;
     width: fit-content;
     height: fit-content;
 }
 
+.btnquanti p{
+    color: #fff;
+}
+
+.btsadex i::before{
+    border-radius: 50%;
+    height: fit-content;
+    background-color: #fff;
+}
+
 @media(max-width:1300px){
     #produtopage{
+        margin-top: 20%;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr 2fr;
         height: fit-content;
         align-items: center;
+        margin-bottom: 20%;
     }
     #details{
+        align-self: flex-start;
         width: 80%;
         justify-self: center;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
     }
     i {
         font-size: 2em !important;
@@ -97,11 +155,45 @@
         font-size: 1rem;
     }
     .btncarrinho{
+        margin-top: 4%;
+        padding: 4%;
+        width: 50vw;
         justify-content: space-around;
     }
-    
-}
+    .baixo{
+        flex-direction: column;
+    }
+    .btnquanti{
+        margin-bottom: 0;
+        width: 50vw;
+    }
 
-#conditions{
-    margin-bottom: 4%;
+    .bga{
+        height: fit-content;
+        margin-left: 0;
+        width: 80%;
+        justify-self: center;
+        align-self: flex-end;
+    }
+    .teste{
+        width: 60%;
+        margin-top: 5%;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    h5{
+        font-size: 1rem;
+    }
+    #frete{
+        margin-bottom: 10%;
+    }
+
+    .toast{
+        align-self: center;
+    }
+    
+    
 }

@@ -26,7 +26,7 @@
                 <img src="/assets/img/menu_FILL0_wght400_GRAD0_opsz48.svg">
               </button>
           
-            <img src="/assets/img/primavera.png" alt="" id="primavera">
+            <img onclick="telaincial()" src="/assets/img/primavera.png" alt="" id="primavera">
             <ul>
                 <li class="opcs"><a href="index.html">Início</a></li>
                 <li class="opcs"><a style="color: #0D8F08;" href="#">Produtos</a></li>
@@ -58,29 +58,32 @@
                     </div>
                 </div>
             </ul>
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header align-items-center justify-content-center">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1">
-                    <li class="fs-1"><a  href="#">Início</a></li>
-                    <li class="fs-1"><a href="#">Produtos</a></li>
-                    <li class="fs-1"><a href="#">Login</a></li>
-                  </ul>
-                </div>
-              </div>
         </nav>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header align-items-center justify-content-center">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="/assets/img/primavera.png" alt="" id="primavera"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+              <li onclick="telaincial()" class="fs-1 nav2"><a><p><i class="fa-solid fa-house"></i> Início</p><i class="fa-solid fa-chevron-right"></i></a></li>
+              <li onclick="telaprodutos()" class="fs-1 nav2"><a><p><i class="fa-solid fa-border-all"></i> Produtos</p><i class="fa-solid fa-chevron-right"></i></a></li>
+              <li class="fs-1 nav2"><a><p><i class="fa-solid fa-right-to-bracket"></i> Login</p><i class="fa-solid fa-chevron-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
     <div class="galeria">
-      <div id="titoprodutos">
+      <div class="d-flex flex-column" id="titoprodutos">
         <h4 id="jardim">o melhor para o seu jardim!</h4>
+        <div class="search-box">
+          <button class="btn-search"><i class="fas fa-search"></i></button>
+          <input oninput="itensfiltro(this)" type="text" class="input-search" placeholder="Digite para procurar...">
+        </div>      
       </div>
       <div class="galeriaprodutos">
           
 
       </div>
-      <button id="butao1" onclick="add()">show more</button>
     </div>
     <footer>
         <div id="a" class="divisao">

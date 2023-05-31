@@ -26,7 +26,7 @@
                 <img src="/assets/img/menu_FILL0_wght400_GRAD0_opsz48.svg">
               </button>
           
-            <img src="/assets/img/primavera.png" alt="" id="primavera">
+            <img onclick="telaincial()" src="/assets/img/primavera.png" alt="" id="primavera">
             <ul>
                 <li class="opcs"><a href="index.html">Início</a></li>
                 <li class="opcs"><a style="color: #0D8F08;" href="produtos.html">Produtos</a></li>
@@ -58,75 +58,79 @@
                     </div>
                 </div>
             </ul>
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header align-items-center justify-content-center">
-                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                  <ul class="navbar-nav justify-content-end flex-grow-1">
-                    <li class="fs-1"><a  href="#">Início</a></li>
-                    <li class="fs-1"><a href="#">Produtos</a></li>
-                    <li class="fs-1"><a href="#">Login</a></li>
-                  </ul>
-                </div>
-              </div>
         </nav>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header align-items-center justify-content-center">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="/assets/img/primavera.png" alt="" id="primavera"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1">
+              <li onclick="telaincial()" class="fs-1 nav2"><a href="#"><p><i class="fa-solid fa-house"></i> Início</p><i class="fa-solid fa-chevron-right"></i></a></li>
+              <li onclick="telaprodutos()" class="fs-1 nav2"><a href="#"><p><i class="fa-solid fa-border-all"></i> Produtos</p><i class="fa-solid fa-chevron-right"></i></a></li>
+              <li class="fs-1 nav2"><a href="#"><p><i class="fa-solid fa-right-to-bracket"></i> Login</p><i class="fa-solid fa-chevron-right"></i></a></li>
+            </ul>
+          </div>
+        </div>
     <div id="produtopage">
         <div class="bga">
             <img id="imagem" src=""  alt="...">
         </div>
         <div id="details">
-            <h1 id="nomea"></h1>
+          <div class="divnoma d-flex align-items-start"><h1 id="nomea"></h1><i class="fa-regular fa-heart fa-2x mt-2"></i></div>
             <h2 id="precospan"></h2>
             <p id="conditions"></p>
-            <div class="d-flex addcar">
-                <button onclick="remoumprod(event)" class="btsadex"><i class="fa-solid fa-circle-minus fa-2x "></i></button>                                
-                <p class="itenstota">1</p>
-                <button onclick="addumprod(event)" class="btsadex"><i class="fa-solid fa-circle-plus fa-2x "></i></button>
-                <button type="button" class="d-flex btncarrinho" onclick="addcarrinhoidi(this)"><svg  fill="#0D8F08" xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 96 960 960" width="32"><path d="M465 443V320H341v-60h124V137h60v123h123v60H525v123h-60ZM289.788 976Q260 976 239 954.788q-21-21.213-21-51Q218 874 239.212 853q21.213-21 51-21Q320 832 341 853.212q21 21.213 21 51Q362 934 340.788 955q-21.213 21-51 21Zm404 0Q664 976 643 954.788q-21-21.213-21-51Q622 874 643.212 853q21.213-21 51-21Q724 832 745 853.212q21 21.213 21 51Q766 934 744.788 955q-21.213 21-51 21ZM290 769q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655 600 634 600H334l-62 109h494v60H290Z"/></svg><h2>Adicionar ao carrinho</h2></button>
+            <div  class="gratis toast align-items-center mb-4" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  O frete é gratis para o seu endereço! 
+                </div>
+                <button type="button"  class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+          </div>
+          <div  class="naoentrega toast align-items-center mb-4" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  Que pena! Ainda não atendemos o seu CEP para entregas. 😔
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+          </div>
+          <div  class="naoexiste toast align-items-center mb-4" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  Não encontramos seu CEP para consultar. 🤔
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+          </div>
+          <div class="precofrete toast align-items-center mb-4" role="alert" aria-live="assertive" aria-atomic="true">
+              <div class="d-flex">
+                <div class="toast-body">
+                  Padrão - 5 dias uteis - Preço: <span id="precoa"></span> 🚚
+                </div>
+                <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+              </div>
+          </div>
+            <div class="baixo d-flex">
+              <div class="d-flex addcar">
+                <div class="d-flex btnquanti">
+                  <button onclick="remoumprod(event)" class="btsadex"><i class="fa-solid fa-circle-minus fa-2x "></i></button>                                
+                  <p class="itenstota">1</p>
+                  <button onclick="addumprod(event)" class="btsadex"><i class="fa-solid fa-circle-plus fa-2x "></i></button>
+                </div>
+                <button type="button" class="d-flex btncarrinho" onclick="addcarrinhoidi(this)"><h2>Adicionar ao carrinho</h2></button>
             </div>
-            <form class="teste mb-4">
+            <form class="teste">
                 <h5>Consulte seu frete</h5>
                 <label for="CEP">CEP:
                     <input type="text" id="frete" class="form-control" onkeypress="$(this).mask('00000-000')">
                 </label>
                 <input class="btn btn-outline-success" type="button" value="Enviar" onclick="infosproduto()"/>
-            </form>
-            <div class="gratis toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                  <div class="toast-body">
-                    O frete é gratis para o seu endereço! 
-                  </div>
-                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="naoentrega toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                  <div class="toast-body">
-                    Que pena! Ainda não atendemos o seu CEP para entregas. 😔
-                  </div>
-                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="naoexiste toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                  <div class="toast-body">
-                    Não encontramos seu CEP para consultar. 🤔
-                  </div>
-                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>
-            <div class="precofrete toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                  <div class="toast-body">
-                    Padrão - 5 dias uteis - Preço: <span id="precoa"></span> 🚚
-                  </div>
-                  <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-                </div>
-            </div>
-        </div>
 
+          </div>  
+            </form>
+            </div>
     </div>
     <footer>
         <div id="a" class="divisao">
