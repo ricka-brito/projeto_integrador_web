@@ -144,7 +144,7 @@ function addcarrinhoidi(e){
   let produto = e.parentNode.parentNode.parentNode.parentNode;
   console.log(produto)
   for(let i = 0; i < carrinhoa.length; i++){
-    if(carrinhoa[i]["nome"] == produto.querySelector('.divnoma')[0].innerHTML){
+    if(carrinhoa[i]["nome"] == produto.querySelector('#nomea').innerHTML){
       carrinhoa[i]['quatidade'] = parseInt(carrinhoa[i]['quatidade']) + parseInt(produto.getElementsByClassName('itenstota')[0].innerText);
       tem = false;
     }
