@@ -89,7 +89,6 @@ window.onload = function() {
   catch{
     carrinhoa = []
     setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
-    console.log(getCookie("carrinhoa"))
     carrinhof()
   }
 
@@ -117,7 +116,6 @@ function excloi(e){
 }
 
 function addcarrinho(e){
-  console.log(carrinhoa)
   let tem = true;
   let produto = e.parentNode.parentNode.parentNode;
   for(let i = 0; i < carrinhoa.length; i++){
@@ -139,10 +137,8 @@ function addcarrinho(e){
 };
 
 function addcarrinhoidi(e){
-  console.log(carrinhoa)
   let tem = true;
   let produto = e.parentNode.parentNode.parentNode.parentNode;
-  console.log(produto)
   for(let i = 0; i < carrinhoa.length; i++){
     if(carrinhoa[i]["nome"] == produto.querySelector('#nomea').innerHTML){
       carrinhoa[i]['quatidade'] = parseInt(carrinhoa[i]['quatidade']) + parseInt(produto.getElementsByClassName('itenstota')[0].innerText);
@@ -248,80 +244,15 @@ function carrinhof(){
 }
 
 
-var carinho = [
-  {
-      nome: "Kit 3 vasos - Ambiente Externo PRIMAVERA",
-      src: "./assets/img/image2.png",
-      preco: "R$ 199,90",
-      detalhes: " ou 4x R$ 49,90"
-  },
-  {
-      nome: "Vaso ornamentado - 40cm PRIMAVERA",
-      src: "./assets/img/image1.png",
-      preco: "R$ 120,00",
-      detalhes: " ou 3x R$ 40,00"
-  },
-  {
-      nome: "Estatua Buda Grande - 40cm PRIMAVERA",
-      src: "./assets/img/image3.png",
-      preco: "R$ 99,90",
-      detalhes: " ou 2x R$ 49,90"
-  },
-  {
-      nome: "Cobogó Chines Vazado - 40cm PRIMAVERA",
-      src: "./assets/img/Elemento Vazado Taco Chinês 39x39x7_1.png",
-      preco: "R$ 29,90",
-      detalhes: " à unidade"
-  },
-  {
-      nome: "Estatua Cristo Grande - 90cm PRIMAVERA",
-      src: "./assets/img/D_NQ_NP_943571-MLB46881873244_072021-W-removebg-preview.png",
-      preco: "R$ 249,90",
-      detalhes: " ou 5x 49,90"
-  },
-  {
-      nome: "Banco liso Externo - 90cm PRIMAVERA",
-      src: "./assets/img/preco-medio-custo-banco-de-concreto-pre-moldado-removebg-preview.png",
-      preco: "R$ 399,90",
-      detalhes: " ou 4x 99,90"
-  },
-  {
-      nome: "Terra vegetal TERRAL - 3kg PRIMAVERA",
-      src: "./assets/img/e071b6_2bdc93c2a25b47dd8b75cc70ffa469be~mv2.png",
-      preco: "R$ 39,90",
-      detalhes: " à unidade"
-  },
-  {
-      nome: "Kit Balaustre completo - PRIMAVERA",
-      src: "./assets/img/kitbalau.png",
-      preco: "R$ 69,90",
-      detalhes: " por metro"
-  },
-  {
-      nome: "Balaustre avulso - PRIMAVERA",
-      src: "./assets/img/balaustre_concreto_tipo_principe_0_60x13cm_atacadao_lazer_89827906_0002_600x600-removebg-preview.png",
-      preco: "R$ 39,90",
-      detalhes: " à unidade"
-  },
-  {
-    nome: "Busto Leão parede - PRIMAVERA",
-    src: "./assets/img/D_NQ_NP_736816-MLB47930416758_102021-W-removebg-preview.png",
-    preco: "R$ 69,90",
-    detalhes: " à unidade"
-  },
-  {
-    nome: "Bloco concreto vazado - PRIMAVERA",
-    src: "./assets/img/artefatos-removebg-preview.png",
-    preco: "R$ 19,90",
-    detalhes: " à unidade"
-  },
-  {
-    nome: "Pisante Jardim Pegadas - PRIMAVERA",
-    src: "./assets/img/PEGADAS-removebg-preview.png",
-    preco: "R$ 39,90",
-    detalhes: " à unidade"
-  }
-];
+var carinho = 
+fetch("https://primavere.azurewebsites.net/produtos", {
+  method: 'get' // opcional
+})
+.then(function(response) {
+  response.json()
+  .then(function(result) {
+    return carinho = result
+  })})
 
 var itensa = 12;
 
@@ -334,7 +265,6 @@ function itens(){
   catch{
     carrinhoa = []
     setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
-    console.log(getCookie("carrinhoa"))
     carrinhof()
   }
 
@@ -397,8 +327,6 @@ function add(){
   itensa = itensa + 4
   itens()
   var itensb = document.getElementsByClassName("galeriaprodutos")[0]
-  console.log(carinho.length)
-  console.log(itensb.childElementCount)
   if(itensb.childElementCount==carinho.length){
     document.getElementById("butao1").style.display = "none";
   }
@@ -406,7 +334,6 @@ function add(){
 
 
 function redireciona(e){
-  console.log(e.target.tagName)
   switch (e.target.tagName){
     case "H1":
       for(let i = 0; i<carinho.length; i++){
@@ -510,9 +437,7 @@ function infosproduto(){
                     for (var j = 0; j < results.length; j++) {
                       var element = results[j];
                       distancea = element.distance.value
-                      console.log(typeof(distancea))
-                      console.log()
-                      document.getElementById("precoa").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(6*((distancea/1000)/9))
+                      document.getElementById("precoa").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(6*((distancea/1000)/9)**2)
 
                       $(document).ready(function(){
                         $(document).ready(function(){
@@ -546,7 +471,6 @@ function definevalores(){
   catch{
     carrinhoa = []
     setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
-    console.log(getCookie("carrinhoa"))
     carrinhof()
   }
 
@@ -564,7 +488,7 @@ function definevalores(){
   document.getElementById("nomea").innerText = carinho[parseInt(id)].nome
   document.getElementById("precospan").innerText = carinho[parseInt(id)].preco
   document.getElementById("conditions").innerText = carinho[parseInt(id)].detalhes + " " + document.getElementById("conditions").innerText
-  
+  document.getElementById("descp").innerText = carinho[parseInt(id)].descricao
 }
 
 function telaincial(){
@@ -578,7 +502,6 @@ function telaprodutos(){
 
 function erro(e){
   var element = e
-  console.log(e)
   element.classList.add('erro');
   setTimeout(removeclasse, 5000, element)
 }
@@ -595,4 +518,8 @@ function abreemail(e){
 
   window.open(`mailto:contato@primavera.com?subject=Contato&body=${body}`, "_self")
   document.getElementById('emailenvi').reset();
+}
+
+function like(e){
+  e.classList.toggle("fa-solid");
 }

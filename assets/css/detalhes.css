@@ -1,16 +1,16 @@
 #produtopage{
-    margin-top: 25vh;
+    margin-top: 21vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    height: 75vh;
+    height: 750px;
     font-family: 'Nunito Sans';
     margin-bottom: 3%;
 }
 
 .bga{   
     margin-left: 12%;
-    height: 89%;
+    height: 95%;
     width: 78%;
     border-radius: 0;
     justify-self: end;
@@ -22,7 +22,6 @@
 
 #details h1{
     text-overflow: clip;
-    margin-bottom: 10%;
 }
 
 
@@ -30,7 +29,7 @@
 .btncarrinho{
     margin-left: 2%;
     padding: 6%;
-    width: 15vw;
+    width: 110%;
     white-space: nowrap;
     gap: 3%;
     align-items: center;
@@ -42,14 +41,14 @@
 .btncarrinho h2{
     margin-bottom: 0 !important;
     margin-top: 0 !important;
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .btncarrinho:active h2{
     color: #fff;
 }
 
-.teste{
+.freteform{
     border-radius: 5%;
     padding: 3.3%;
     width: fit-content;
@@ -59,7 +58,6 @@
 .itenstota{
     color: #0D8F08;
     font-family: 'Nunito Sans';
-    font-size: 2rem;
     margin-left: 1%;
     margin-right: 1%;
     height: min-content;
@@ -75,7 +73,7 @@
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     padding: 5%;
     width: 88%;
-    height: 89.4%;
+    height: 95.4%;
 }
 
 
@@ -87,13 +85,13 @@
 
 #nomea{
     font-weight: 800;
-    border-bottom: 1px solid #d6d6d6;
-    padding-bottom: 2%;
+
 }
 
 #precospan{
     font-weight: 800;
     margin-bottom: 0;
+    margin-top: 4%;
 }
 
 .baixo{
@@ -104,13 +102,15 @@
 
 .btnquanti{
     justify-content: space-between;
-    width: 15vw;
+    width: 110%;
     padding: 1%;
     border: 1px solid #0D8F08;
     margin-left: 2%;
     border-radius: 60px;
     margin-bottom: 6%;
     background-color: #0D8F08;
+    display: flex;
+    align-items: center;
 }
 
 .btsadex i{
@@ -127,6 +127,10 @@
     border-radius: 50%;
     height: fit-content;
     background-color: #fff;
+    -webkit-text-fill-color: #0D8F08;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: #0D8F08;
+    border: 0;
 }
 
 @media(max-width:1300px){
@@ -146,19 +150,20 @@
         display: flex;
         flex-direction: column;
     }
-    i {
+    .btsadex i {
         font-size: 2em !important;
     }
     .btncarrinho h2{
         margin-bottom: 0 !important;
         margin-top: 0 !important;
-        font-size: 1rem;
+        font-size: 3vw;
     }
     .btncarrinho{
         margin-top: 4%;
-        padding: 4%;
+        padding: 2%;
         width: 50vw;
         justify-content: space-around;
+        height: 7vw;
     }
     .baixo{
         flex-direction: column;
@@ -166,6 +171,8 @@
     .btnquanti{
         margin-bottom: 0;
         width: 50vw;
+        height: 7vw;
+        font-size: 2.5vw;
     }
 
     .bga{
@@ -175,7 +182,7 @@
         justify-self: center;
         align-self: flex-end;
     }
-    .teste{
+    .freteform{
         width: 60%;
         margin-top: 5%;
         align-items: center;
@@ -196,4 +203,32 @@
     }
     
     
+}
+
+#descp{
+    font-size: 1rem;
+    text-align: justify;
+    margin-bottom: 5%;
+    color: black;
+}
+
+h5{
+    margin-top: 7%;
+}
+
+#titdesc{
+    font-size: 1.2rem;
+    color: #0D8F08;
+    margin-top: 0;
+}
+
+.fa-heart{
+    color: #0D8F08;
+}
+
+.divnoma{
+    justify-content: space-between;
+    border-bottom: 1px solid #d6d6d6;
+    margin-bottom: 0;
+    padding-bottom: 1%;
 }
