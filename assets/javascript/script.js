@@ -1,13 +1,17 @@
-async function pesquisarCEP(){
-    var cidades = ['Campinas', 'Hortolândia', 'Monte Mor', 'Sumaré', 'Valinhos', 'Vinhedo', 'Louveira', 'Paulínia', 'Nova Odessa'];
+// Variavel Master Carrinho
+var carrinhoa = []
 
-    
+// Função que pesquisa CEP com a API viacep
+async function pesquisarCEP(){
+    // Lista de cidades que entregam
+    var cidades = ['Campinas', 'Hortolândia', 'Monte Mor', 'Sumaré', 'Valinhos', 'Vinhedo', 'Louveira', 'Paulínia', 'Nova Odessa'];
 
     const cep = document.getElementById('CEP').value.replace('-', '');
     const url = `https://viacep.com.br/ws/${cep}/json/`;
 
+    // Chamada da API e tratativa de erro
     fetch(url, {
-        method: 'get' // opcional
+        method: 'get'
       })
       .then(function(response) {
         response.json()
@@ -42,9 +46,9 @@ $(document).keypress(
       if (event.which == '13') {
         event.preventDefault();
       }
-  });
+});
 
-
+// Função que muda adiciona uma cor no fundo com transparencia
 document.addEventListener('scroll', () => {
   const header = document.querySelector('nav')
 
@@ -55,9 +59,7 @@ document.addEventListener('scroll', () => {
   }
 })
 
-
-var carrinhoa = []
-
+// Função para definir cookies
 function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -65,6 +67,7 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
+// Função para ler cookies
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
@@ -81,7 +84,8 @@ function getCookie(cname) {
   return "";
 }
 
-window.onload = function() {
+// Função que le os cookies e adiciona na variavel do carrinho
+function cookiescarrinho() {
   try {
     carrinhoa = JSON.parse(getCookie("carrinhoa"))
     carrinhof()
@@ -91,18 +95,15 @@ window.onload = function() {
     setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
     carrinhof()
   }
-
-  
+  return carrinhoa
 }
- 
+
+// Função que salva os cookies antes da pagina descarregar
 window.onbeforeunload = function a() {
     setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
 };
 
-
-
-
-
+// Função que remove itens do carrinho
 function excloi(e){
   for(let i = 0; i < carrinhoa.length; i++){
     if(carrinhoa[i]["nome"] == e.target.parentNode.parentNode.innerText){
@@ -115,6 +116,7 @@ function excloi(e){
   carrinhof()
 }
 
+// Função que adiciona itens ao carrinho
 function addcarrinho(e){
   let tem = true;
   let produto = e.parentNode.parentNode.parentNode;
@@ -136,6 +138,7 @@ function addcarrinho(e){
   carrinhof()
 };
 
+// Função que adiciona itens ao carrinho quando na pagina do produto
 function addcarrinhoidi(e){
   let tem = true;
   let produto = e.parentNode.parentNode.parentNode.parentNode;
@@ -157,6 +160,7 @@ function addcarrinhoidi(e){
   carrinhof()
 };
 
+// Função que adiciona +1 itens a quantidade no carrinho
 function addum(e){
   let produto = e.target.parentNode.parentNode.parentNode.parentNode;
   for(let i = 0; i < carrinhoa.length; i++){
@@ -168,11 +172,13 @@ function addum(e){
   e.stopPropagation();
 }
 
+// Função que adiciona +1 itens a quantidade nos produtos
 function addumprod(e){
   let produto = e.target.parentNode.parentNode;
   produto.querySelector("p").innerText = parseInt(produto.querySelector("p").innerText) + 1
 }
 
+// Função que remove -1 itens a quantidade no carrinho
 function remoumprod(e){
   let produto = e.target.parentNode.parentNode;
   if(parseInt(produto.querySelector("p").innerText) == 1){
@@ -181,6 +187,7 @@ function remoumprod(e){
   produto.querySelector("p").innerText = parseInt(produto.querySelector("p").innerText) - 1
 }
 
+// Função que remove -1 itens a quantidade no produtos
 function remoum(e){
   if(parseInt(e.target.parentNode.parentNode.querySelector('p').innerText) - 1 == 0){
     for(let i = 0; i < carrinhoa.length; i++){
@@ -200,6 +207,7 @@ function remoum(e){
   e.stopPropagation();
 }
 
+// Função Principal do carrinho, que atualiza e adiciona os itens (componentização)
 function carrinhof(){
   var produtosa = $("#produtos"); 
   var nmrprod = document.getElementById("itens")
@@ -235,7 +243,8 @@ function carrinhof(){
           </div>
       </div>`
       totalitens = totalitens + parseInt(carrinhoa[i]["quatidade"])
-      totaltodos = totaltodos + (parseFloat(carrinhoa[i]["preco"].replace(",",".")) * totalitens)
+      totalindividual = parseInt(carrinhoa[i]["quatidade"])
+      totaltodos = totaltodos + (parseFloat(carrinhoa[i]["preco"].replace(",",".")) * totalindividual)
       produtosa.append(strHTML)
   }
   nmrprod.innerHTML =  totalitens.toString()
@@ -243,20 +252,21 @@ function carrinhof(){
   }
 }
 
+// Função que chama a API na azure que contem os produtos
+async function chamaapi(){
+  await fetch("https://primavere.azurewebsites.net/produtos", {
+    method: 'get'
+  })
+  .then(function(response) {
+    teste = response.json()
+  })
+  return teste
+}
 
-var carinho = 
-fetch("https://primavere.azurewebsites.net/produtos", {
-  method: 'get' // opcional
-})
-.then(function(response) {
-  response.json()
-  .then(function(result) {
-    return carinho = result
-  })})
-
-var itensa = 12;
-
-function itens(){
+// Função que exibe todos os produtos na pagina de produtos
+async function itens(){
+  carrinhoa = cookiescarrinho()
+  carinho = await chamaapi()
 
   try {
     carrinhoa = JSON.parse(getCookie("carrinhoa"))
@@ -297,7 +307,10 @@ function itens(){
   }
 }
 
-function itensfiltro(a){
+// Função que exibe os produtos com filtro de pesquisa
+async function itensfiltro(a){
+  carinho = await chamaapi()
+
   var itensb = $(".galeriaprodutos");
   itensb.empty()
   for(let i = 0; i<carinho.length; i++){
@@ -323,17 +336,10 @@ function itensfiltro(a){
   }
 }
 
-function add(){
-  itensa = itensa + 4
-  itens()
-  var itensb = document.getElementsByClassName("galeriaprodutos")[0]
-  if(itensb.childElementCount==carinho.length){
-    document.getElementById("butao1").style.display = "none";
-  }
-}
+// Função que redireciona para a pagina de produto individual com ID no url
+async function redireciona(e){
+  carinho = await chamaapi()
 
-
-function redireciona(e){
   switch (e.target.tagName){
     case "H1":
       for(let i = 0; i<carinho.length; i++){
@@ -373,89 +379,85 @@ function redireciona(e){
   }
 }
 
-
+// Função que calcula frete
 function infosproduto(){
-
-
   var origin1 = '13185-521';
   var origin2 = document.getElementById("frete").value;
 
-  let cidadesgratis = ['Campinas', 'Hortolândia', 'Sumaré'];
+  let cidadesgratis = ['Hortolândia'];
   let cidades = ['Campinas', 'Hortolândia', 'Monte Mor', 'Sumaré', 'Valinhos', 'Vinhedo', 'Louveira', 'Paulínia', 'Nova Odessa'];
 
-    
-
-    const cep = document.getElementById('frete').value.replace('-', '');
-    const url = `https://viacep.com.br/ws/${cep}/json/`;
-    fetch(url, {
-      method: 'get' // opcional
-    })
-    .then(function(response) {
-      response.json()
-      .then(function(result) {
-        if(result.erro == true){
+  const cep = document.getElementById('frete').value.replace('-', '');
+  const url = `https://viacep.com.br/ws/${cep}/json/`;
+  fetch(url, {
+    method: 'get'
+  })
+  .then(function(response) {
+    response.json()
+    .then(function(result) {
+      if(result.erro == true){
+        $(document).ready(function(){
+          $(document).ready(function(){
+            $('.naoexiste').toast('show');
+          });
+          });
+      }
+      else{
+        if(cidades.indexOf(result['localidade']) == -1){
           $(document).ready(function(){
             $(document).ready(function(){
-              $('.naoexiste').toast('show');
+              $('.naoentrega').toast('show');
             });
             });
         }
         else{
-          if(cidades.indexOf(result['localidade']) == -1){
+          if(cidadesgratis.indexOf(result['localidade']) > -1){
             $(document).ready(function(){
               $(document).ready(function(){
-                $('.naoentrega').toast('show');
+                $('.gratis').toast('show');
               });
               });
-          }
-          else{
-            if(cidadesgratis.indexOf(result['localidade']) > -1){
-              $(document).ready(function(){
-                $(document).ready(function(){
-                  $('.gratis').toast('show');
-                });
-                });
-                
-          }
-          else{
-            var service = new google.maps.DistanceMatrixService();
-            service.getDistanceMatrix(
-              {
-                origins: [origin1],
-                destinations: [origin2],
-                travelMode: 'DRIVING',
-                unitSystem: 0,  
-              }, callback);
-
-              function callback(response, status) {
-                if (status == 'OK') {
-                  var origins = response.originAddresses;
-                  var destinations = response.destinationAddresses;
               
-                  for (var i = 0; i < origins.length; i++) {
-                    var results = response.rows[i].elements;
-                    for (var j = 0; j < results.length; j++) {
-                      var element = results[j];
-                      distancea = element.distance.value
-                      document.getElementById("precoa").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(6*((distancea/1000)/9)**2)
+        }
+        else{
+          var service = new google.maps.DistanceMatrixService();
+          service.getDistanceMatrix(
+            {
+              origins: [origin1],
+              destinations: [origin2],
+              travelMode: 'DRIVING',
+              unitSystem: 0,  
+            }, callback);
 
+            function callback(response, status) {
+              if (status == 'OK') {
+                var origins = response.originAddresses;
+                var destinations = response.destinationAddresses;
+            
+                for (var i = 0; i < origins.length; i++) {
+                  var results = response.rows[i].elements;
+                  for (var j = 0; j < results.length; j++) {
+                    var element = results[j];
+                    distancea = element.distance.value
+                    document.getElementById("precoa").innerText = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(6*((distancea/1000)/9)**1.1)
+
+                    $(document).ready(function(){
                       $(document).ready(function(){
-                        $(document).ready(function(){
-                          $('.precofrete').toast('show');
-                        });
-                        });
-                    }
+                        $('.precofrete').toast('show');
+                      });
+                      });
                   }
                 }
               }
+            }
 
 
-          }
-          }
-          
         }
-      })
+        }
+        
+      }
     })
+  })
 
 
 
@@ -463,7 +465,11 @@ function infosproduto(){
   
 }
 
-function definevalores(){
+// Função que define os valores das tags da pagina de produto individual
+async function definevalores(){
+  cookiescarrinho()
+  carinho = await chamaapi()
+
   try {
     carrinhoa = JSON.parse(getCookie("carrinhoa"))
     carrinhof()
@@ -491,27 +497,30 @@ function definevalores(){
   document.getElementById("descp").innerText = carinho[parseInt(id)].descricao
 }
 
+// Função que redireciona para a pagina inicial
 function telaincial(){
   window.open("./index.html", "_self")
 }
 
+// Função que redireciona para a tela de produtos
 function telaprodutos(){
   window.open("./produtos.html", "_self")
 
 }
 
+// Função para tremer o form quando mal preenchido
 function erro(e){
   var element = e
   element.classList.add('erro');
   setTimeout(removeclasse, 5000, element)
 }
 
+// Função auxiliar a função erro
 function removeclasse(e){
   e.classList.remove('erro');
 }
 
-
-
+// Função para abrir email com corpo do email preenchido
 function abreemail(e){
 
   let body = `Olá me chamo ${document.getElementById('nome').value}. %0D%0A%0D%0A${document.getElementById('exampleFormControlTextarea1').value}`
@@ -520,6 +529,11 @@ function abreemail(e){
   document.getElementById('emailenvi').reset();
 }
 
+// Função para adicionar interatividade com o like
 function like(e){
   e.classList.toggle("fa-solid");
+}
+
+async function loadpaginaincial(){
+  carrinhoa = cookiescarrinho()
 }

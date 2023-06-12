@@ -17,20 +17,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" integrity="sha512-wCwx+DYp8LDIaTem/rpXubV/C1WiNRsEVqoztV0NZm8tiTvsUeSlA/Uz02VTGSiqfzAHD4RnqVoevMcRZgYEcQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
     <script src="assets/javascript/script.js"></script>
-    <title>Document</title>
+    <title>Primavera</title>
 </head>
-<body>
+<body onload="loadpaginaincial()">
+    <!--Header contendo a nav e "Pagina Inicial"-->
     <header>
+
+        <!--Barra de Navegação-->
         <nav>
+
+            <!--Botão do menu Hamburger-->
             <button id="menuham" class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <img src="./assets/img/menu_FILL0_wght400_GRAD0_opsz48.svg">
-              </button>
-          
+            </button>
+
+            <!--Logo do Site-->
             <img src="./assets/img/primavera.png" alt="" id="primavera">
+
+            <!--Lista com links para as outras paginas-->
             <ul>
                 <li class="opcs"><a style="color: #0D8F08;" href="#">Início</a></li>
                 <li class="opcs"><a href="produtos.html">Produtos</a></li>
                 <li class="opcs"><a href="#">Login</a></li>
+
+                <!--Carrinho-->
                 <div class="dropdown">
                     <a class='dropdown' href="#" id="carrinho" role="button" data-bs-toggle="dropdown"  data-bs-auto-close="outside" aria-expanded="false">
                         <svg width="40" height="56" viewBox="0 0 44 56" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -38,16 +48,22 @@
                         </svg>
                         <p id="itens">0</p>
                     </a>
-
+                    
+                    <!--Div do carrinho-->
                     <div class="dropdown-menu p-4 mt-3" style="width: 400px;">
                         <i class="fa-solid fa-caret-up"></i>
+                        <!--Header Carrinho-->
                         <div id="headercarrinho" class="d-flex align-items-center flex-row border-bottom border-dark-subtle mb-2">
                             <i class="fa-solid fa-cart-shopping fa-2x mb-2" style="transform: scale(0.6);"></i>
                             <h3 class="ms-1">seu carrinho</h3>
                         </div>
+
+                        <!--Lista de produtos-->
                         <div id="produtos">
                             <h2 style="color:#0D8F08;" class="d-flex align-items-center flex-column p-4 text-center"><i class="fa-solid fa-cart-shopping fa-2x mb-4"></i>seu carrinho esta vazio</h2>
                         </div>
+
+                        <!--Footer Carrinho-->
                         <div class="total mt-3 border-top border-dark-subtle pt-3">
                             <div class="soma d-flex mb-2">
                                 <h4>total</h4>
@@ -55,11 +71,12 @@
                             </div>
                             <button class="btn btn-outline-success" style="border-radius: 0; float: right;">Finalizar compra</button>
                         </div>
+
                     </div>
                 </div>
             </ul>
-
         </nav>
+        <!--Offcanvas com os links (responsividade)-->
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
             <div class="offcanvas-header align-items-center justify-content-center">
               <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img src="./assets/img/primavera.png" alt="" id="primavera"></h5>
@@ -72,35 +89,40 @@
                 <li class="fs-1 nav2"><a href="#"><p><i class="fa-solid fa-right-to-bracket"></i> Login</p><i class="fa-solid fa-chevron-right"></i></a></li>
               </ul>
             </div>
-          </div>
-        <section id="desc">
-        <div id="anunc">
-            <h1 id="decore">DECORE A<br>SUA CASA</h1>
-            <a href="produtos.html" id="botao1">eu quero!</a>
         </div>
-        <article>
-            <div class="recomend">
-                <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="38" cy="38" r="36.3133" transform="rotate(-0.283635 38 38)" fill="white" stroke="#0D8F08" stroke-width="3"/>
-                    <path d="M24.6956 53.7803C23.0645 53.7884 21.6713 53.2202 20.516 52.0759C19.3607 50.9315 18.779 49.5379 18.7709 47.895L15.7071 47.9102L15.593 24.8583C15.5889 24.0231 15.8885 23.3008 16.4919 22.6914C17.0952 22.082 17.8145 21.7753 18.6498 21.7711L48.3944 21.6239L48.4359 30.0041L53.4943 29.9791L61.0519 39.9689L61.0901 47.6855L57.5962 47.7028C57.6044 49.3457 57.0364 50.745 55.8923 51.9008C54.7482 53.0565 53.355 53.6384 51.7125 53.6466C50.0756 53.6547 48.681 53.0865 47.5285 51.9422C46.3761 50.7978 45.7958 49.4041 45.7877 47.7613L30.5794 47.8365C30.5875 49.4804 30.0167 50.8799 28.867 52.0353C27.7172 53.1905 26.3268 53.7722 24.6956 53.7803ZM24.6925 51.3637C25.6605 51.3589 26.4821 51.0156 27.1573 50.3336C27.8325 49.6517 28.1677 48.8267 28.1629 47.8587C28.1581 46.8907 27.8148 46.0691 27.1328 45.3939C26.4509 44.7187 25.626 44.3835 24.6579 44.3883C23.6899 44.393 22.8683 44.7364 22.1931 45.4184C21.5179 46.1003 21.1827 46.9252 21.1875 47.8933C21.1923 48.8613 21.5356 49.6829 22.2175 50.3581C22.8995 51.0333 23.7245 51.3685 24.6925 51.3637ZM18.1118 45.4816L19.2627 45.4759C19.711 44.4606 20.4161 43.6188 21.3782 42.9505C22.3403 42.2821 23.4168 41.945 24.6079 41.9391C25.7717 41.9334 26.8485 42.2619 27.8383 42.9246C28.8281 43.5874 29.5522 44.4201 30.0104 45.4227L46.0952 45.3431L45.9898 24.0524L18.6617 24.1877C18.4979 24.1885 18.348 24.2575 18.2122 24.3947C18.0763 24.532 18.0088 24.6825 18.0096 24.8464L18.1118 45.4816ZM51.7093 51.2299C52.6773 51.2252 53.4989 50.8818 54.1741 50.1999C54.8493 49.518 55.1845 48.693 55.1797 47.725C55.1749 46.757 54.8316 45.9353 54.1497 45.2602C53.4677 44.5849 52.6428 44.2497 51.6748 44.2545C50.7067 44.2593 49.8851 44.6027 49.2099 45.2846C48.5347 45.9665 48.1995 46.7915 48.2043 47.7595C48.2091 48.7275 48.5524 49.5491 49.2344 50.2244C49.9163 50.8995 50.7413 51.2347 51.7093 51.2299ZM48.4895 40.8338L58.6598 40.7835L52.257 32.4019L48.4478 32.4207L48.4895 40.8338Z" fill="#0D8F08"/>
-                    </svg>
-                    <h1>FRETE GRATIS<p>para campinas e região</p></h1>
+        <!--Tela inicial-->
+        <section id="desc">
+            <div id="anunc">
+                <h1 id="decore">DECORE A<br>SUA CASA</h1>
+                <a href="produtos.html" id="botao1">eu quero!</a>
             </div>
-            <div class="recomend"> 
-                <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="38.073" cy="38.073" r="36.3859" transform="rotate(-0.283635 38.073 38.073)" fill="white" stroke="#0D8F08" stroke-width="3"/>
-                    <path d="M31.5625 31.7843C31.8125 31.8868 32.0521 31.9175 32.2812 31.8765C32.5104 31.8356 32.6979 31.6922 32.8437 31.4463L36.9062 25.0239L33.8766 20.1375C33.4729 19.5437 32.8977 19.2468 32.1511 19.2468C31.4045 19.2468 30.8333 19.5439 30.4375 20.138L26.0312 27.4208C25.8854 27.697 25.8385 27.9421 25.8906 28.156C25.9427 28.37 26.1146 28.5346 26.4062 28.65L31.5625 31.7843ZM51.7447 45.5817L47.7812 39.1286C47.6354 38.9237 47.5885 38.7035 47.6406 38.4679C47.6927 38.2323 47.8646 38.0428 48.1562 37.8994L53.4434 34.8227C53.6895 34.7023 53.9362 34.671 54.1836 34.7287C54.431 34.7865 54.6094 34.9317 54.7187 35.1645L57.4687 39.6203C57.7812 40.2144 57.9687 40.8546 58.0312 41.5408C58.0937 42.2271 57.9583 42.8571 57.625 43.4307C57.2917 44.0863 56.7891 44.6086 56.1174 44.9979C55.4457 45.3871 54.7399 45.5817 54 45.5817H51.7447ZM44.4687 57.8427L38.6562 52.127C38.4687 51.9836 38.375 51.7788 38.375 51.5125C38.375 51.2461 38.4687 51.0413 38.6562 50.8979L44.4687 45.1823C44.7396 44.8955 45.0625 44.8357 45.4375 45.003C45.8125 45.1703 46 45.4349 46 45.7968V47.5484H55.5312L52.6562 53.264C52.2604 53.9196 51.739 54.442 51.0919 54.8312C50.4449 55.2205 49.7582 55.4151 49.032 55.4151H46V57.2281C46 57.59 45.8125 57.8546 45.4375 58.0219C45.0625 58.1892 44.7396 58.1295 44.4687 57.8427ZM26.6562 55.4151C26.0104 55.4151 25.4062 55.2512 24.8437 54.9234C24.2812 54.5956 23.875 54.1449 23.625 53.5713C23.375 53.0515 23.25 52.5119 23.25 51.9523C23.25 51.3928 23.3958 50.8569 23.6875 50.3448L25.3937 47.5484H33.1353C33.3576 47.5484 33.5573 47.6406 33.7344 47.825C33.9114 48.0093 34 48.2015 34 48.4016V54.5004C34 54.7824 33.9114 55.0053 33.7344 55.1692C33.5573 55.3331 33.3572 55.4151 33.1342 55.4151H26.6562ZM21.6875 49.8224L18.4375 43.4307C18.1042 42.8571 17.9579 42.226 17.9987 41.5375C18.0395 40.8489 18.2587 40.2099 18.6562 39.6203L19.4062 38.3604L17.875 37.4078C17.5417 37.2156 17.3958 36.937 17.4375 36.5722C17.4792 36.2074 17.6979 35.9533 18.0937 35.8099L26.0374 33.8724C26.2416 33.8324 26.4739 33.879 26.7344 34.0122C26.9948 34.1454 27.1453 34.3119 27.1859 34.5117L29.1562 42.3552C29.1771 42.4986 29.151 42.6471 29.0781 42.8007C29.0052 42.9544 28.9167 43.0824 28.8125 43.1849C28.7083 43.2873 28.5729 43.3436 28.4062 43.3539C28.2396 43.3641 28.0417 43.3385 27.8125 43.277L26.25 42.3552L21.6875 49.8224ZM47.7812 32.7369L39.8125 30.801C39.4375 30.6576 39.2187 30.4066 39.1562 30.0481C39.0937 29.6896 39.253 29.4048 39.634 29.1937L41.2187 28.2505L34.9687 18.0484H42.0001C42.7076 18.0484 43.359 18.2277 43.9545 18.5862C44.5499 18.9447 45.0503 19.4019 45.4556 19.958L48.0625 24.2557L49.5312 23.3645C49.684 23.2416 49.8576 23.1904 50.052 23.2109C50.2465 23.2314 50.4075 23.2885 50.5351 23.3824C50.6627 23.4762 50.7617 23.6137 50.832 23.7948C50.9023 23.9759 50.9167 24.1602 50.875 24.3479L48.9375 32.0916C48.8594 32.3257 48.7044 32.5123 48.4726 32.6513C48.2409 32.7904 48.0104 32.8189 47.7812 32.7369Z" fill="#0D8F08"/>
-                </svg>
-                <h1>SUSTENTAVEL<p id="sus">produção sustentavel</p></h1>
-            </div>                       
-        </article>
+            <article>
+                <div class="recomend">
+                    <svg width="76" height="76" viewBox="0 0 76 76" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38" cy="38" r="36.3133" transform="rotate(-0.283635 38 38)" fill="white" stroke="#0D8F08" stroke-width="3"/>
+                        <path d="M24.6956 53.7803C23.0645 53.7884 21.6713 53.2202 20.516 52.0759C19.3607 50.9315 18.779 49.5379 18.7709 47.895L15.7071 47.9102L15.593 24.8583C15.5889 24.0231 15.8885 23.3008 16.4919 22.6914C17.0952 22.082 17.8145 21.7753 18.6498 21.7711L48.3944 21.6239L48.4359 30.0041L53.4943 29.9791L61.0519 39.9689L61.0901 47.6855L57.5962 47.7028C57.6044 49.3457 57.0364 50.745 55.8923 51.9008C54.7482 53.0565 53.355 53.6384 51.7125 53.6466C50.0756 53.6547 48.681 53.0865 47.5285 51.9422C46.3761 50.7978 45.7958 49.4041 45.7877 47.7613L30.5794 47.8365C30.5875 49.4804 30.0167 50.8799 28.867 52.0353C27.7172 53.1905 26.3268 53.7722 24.6956 53.7803ZM24.6925 51.3637C25.6605 51.3589 26.4821 51.0156 27.1573 50.3336C27.8325 49.6517 28.1677 48.8267 28.1629 47.8587C28.1581 46.8907 27.8148 46.0691 27.1328 45.3939C26.4509 44.7187 25.626 44.3835 24.6579 44.3883C23.6899 44.393 22.8683 44.7364 22.1931 45.4184C21.5179 46.1003 21.1827 46.9252 21.1875 47.8933C21.1923 48.8613 21.5356 49.6829 22.2175 50.3581C22.8995 51.0333 23.7245 51.3685 24.6925 51.3637ZM18.1118 45.4816L19.2627 45.4759C19.711 44.4606 20.4161 43.6188 21.3782 42.9505C22.3403 42.2821 23.4168 41.945 24.6079 41.9391C25.7717 41.9334 26.8485 42.2619 27.8383 42.9246C28.8281 43.5874 29.5522 44.4201 30.0104 45.4227L46.0952 45.3431L45.9898 24.0524L18.6617 24.1877C18.4979 24.1885 18.348 24.2575 18.2122 24.3947C18.0763 24.532 18.0088 24.6825 18.0096 24.8464L18.1118 45.4816ZM51.7093 51.2299C52.6773 51.2252 53.4989 50.8818 54.1741 50.1999C54.8493 49.518 55.1845 48.693 55.1797 47.725C55.1749 46.757 54.8316 45.9353 54.1497 45.2602C53.4677 44.5849 52.6428 44.2497 51.6748 44.2545C50.7067 44.2593 49.8851 44.6027 49.2099 45.2846C48.5347 45.9665 48.1995 46.7915 48.2043 47.7595C48.2091 48.7275 48.5524 49.5491 49.2344 50.2244C49.9163 50.8995 50.7413 51.2347 51.7093 51.2299ZM48.4895 40.8338L58.6598 40.7835L52.257 32.4019L48.4478 32.4207L48.4895 40.8338Z" fill="#0D8F08"/>
+                        </svg>
+                        <h1>FRETE GRATIS<p>para campinas e região</p></h1>
+                </div>
+                <div class="recomend"> 
+                    <svg width="77" height="77" viewBox="0 0 77 77" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="38.073" cy="38.073" r="36.3859" transform="rotate(-0.283635 38.073 38.073)" fill="white" stroke="#0D8F08" stroke-width="3"/>
+                        <path d="M31.5625 31.7843C31.8125 31.8868 32.0521 31.9175 32.2812 31.8765C32.5104 31.8356 32.6979 31.6922 32.8437 31.4463L36.9062 25.0239L33.8766 20.1375C33.4729 19.5437 32.8977 19.2468 32.1511 19.2468C31.4045 19.2468 30.8333 19.5439 30.4375 20.138L26.0312 27.4208C25.8854 27.697 25.8385 27.9421 25.8906 28.156C25.9427 28.37 26.1146 28.5346 26.4062 28.65L31.5625 31.7843ZM51.7447 45.5817L47.7812 39.1286C47.6354 38.9237 47.5885 38.7035 47.6406 38.4679C47.6927 38.2323 47.8646 38.0428 48.1562 37.8994L53.4434 34.8227C53.6895 34.7023 53.9362 34.671 54.1836 34.7287C54.431 34.7865 54.6094 34.9317 54.7187 35.1645L57.4687 39.6203C57.7812 40.2144 57.9687 40.8546 58.0312 41.5408C58.0937 42.2271 57.9583 42.8571 57.625 43.4307C57.2917 44.0863 56.7891 44.6086 56.1174 44.9979C55.4457 45.3871 54.7399 45.5817 54 45.5817H51.7447ZM44.4687 57.8427L38.6562 52.127C38.4687 51.9836 38.375 51.7788 38.375 51.5125C38.375 51.2461 38.4687 51.0413 38.6562 50.8979L44.4687 45.1823C44.7396 44.8955 45.0625 44.8357 45.4375 45.003C45.8125 45.1703 46 45.4349 46 45.7968V47.5484H55.5312L52.6562 53.264C52.2604 53.9196 51.739 54.442 51.0919 54.8312C50.4449 55.2205 49.7582 55.4151 49.032 55.4151H46V57.2281C46 57.59 45.8125 57.8546 45.4375 58.0219C45.0625 58.1892 44.7396 58.1295 44.4687 57.8427ZM26.6562 55.4151C26.0104 55.4151 25.4062 55.2512 24.8437 54.9234C24.2812 54.5956 23.875 54.1449 23.625 53.5713C23.375 53.0515 23.25 52.5119 23.25 51.9523C23.25 51.3928 23.3958 50.8569 23.6875 50.3448L25.3937 47.5484H33.1353C33.3576 47.5484 33.5573 47.6406 33.7344 47.825C33.9114 48.0093 34 48.2015 34 48.4016V54.5004C34 54.7824 33.9114 55.0053 33.7344 55.1692C33.5573 55.3331 33.3572 55.4151 33.1342 55.4151H26.6562ZM21.6875 49.8224L18.4375 43.4307C18.1042 42.8571 17.9579 42.226 17.9987 41.5375C18.0395 40.8489 18.2587 40.2099 18.6562 39.6203L19.4062 38.3604L17.875 37.4078C17.5417 37.2156 17.3958 36.937 17.4375 36.5722C17.4792 36.2074 17.6979 35.9533 18.0937 35.8099L26.0374 33.8724C26.2416 33.8324 26.4739 33.879 26.7344 34.0122C26.9948 34.1454 27.1453 34.3119 27.1859 34.5117L29.1562 42.3552C29.1771 42.4986 29.151 42.6471 29.0781 42.8007C29.0052 42.9544 28.9167 43.0824 28.8125 43.1849C28.7083 43.2873 28.5729 43.3436 28.4062 43.3539C28.2396 43.3641 28.0417 43.3385 27.8125 43.277L26.25 42.3552L21.6875 49.8224ZM47.7812 32.7369L39.8125 30.801C39.4375 30.6576 39.2187 30.4066 39.1562 30.0481C39.0937 29.6896 39.253 29.4048 39.634 29.1937L41.2187 28.2505L34.9687 18.0484H42.0001C42.7076 18.0484 43.359 18.2277 43.9545 18.5862C44.5499 18.9447 45.0503 19.4019 45.4556 19.958L48.0625 24.2557L49.5312 23.3645C49.684 23.2416 49.8576 23.1904 50.052 23.2109C50.2465 23.2314 50.4075 23.2885 50.5351 23.3824C50.6627 23.4762 50.7617 23.6137 50.832 23.7948C50.9023 23.9759 50.9167 24.1602 50.875 24.3479L48.9375 32.0916C48.8594 32.3257 48.7044 32.5123 48.4726 32.6513C48.2409 32.7904 48.0104 32.8189 47.7812 32.7369Z" fill="#0D8F08"/>
+                    </svg>
+                    <h1>SUSTENTAVEL<p id="sus">produção sustentavel</p></h1>
+                </div>                       
+            </article>
         </section>
     </header>
+    <!--Carrosel com produtos em destaque-->
     <section id="destaques">
+        <h1 id="titdesc">Destaques da semana</h1>
         <div class="container modificador">
             <div class="glide">
                 <div class="glide__track" data-glide-el="track">
                   <ul class="glide__slides">
+
+                    <!--Item Carrosel-->
                     <li class="glide__slide">
                         <div class="product">
                             <div onclick="redireciona(event)" class="bga">
@@ -116,6 +138,8 @@
                             </div>
                         </div>
                     </li>
+
+                    <!--Item Carrosel-->
                     <li class="glide__slide">
                         <div class="product">
                             <div onclick="redireciona(event)" class="bga">
@@ -131,6 +155,8 @@
                             </div>
                         </div>
                     </li>
+
+                    <!--Item Carrosel-->
                     <li class="glide__slide">
                         <div class="product">
                             <div onclick="redireciona(event)" class="bga">
@@ -146,6 +172,8 @@
                             </div>
                         </div>
                     </li>
+
+                    <!--Item Carrosel-->
                     <li class="glide__slide">
                         <div class="product">
                             <div onclick="redireciona(event)" class="bga">
@@ -161,6 +189,8 @@
                             </div>
                         </div>
                     </li>
+
+                    <!--Item Carrosel-->
                     <li class="glide__slide">
                         <div class="product">
                             <div onclick="redireciona(event)" class="bga">
@@ -176,6 +206,8 @@
                             </div>
                         </div>
                     </li>
+
+                    <!--Item Carrosel-->
                     <li class="glide__slide">
                         <div class="product">
                             <div onclick="redireciona(event)" class="bga">
@@ -191,16 +223,20 @@
                             </div>
                         </div>
                     </li>
+
                   </ul>
                 </div>
-                <div data-glide-el="controls">
-                    <button class="vai btn btn-outline-success position-absolute top-50" data-glide-dir=">">></button>
-                    <button class="vem btn btn-outline-success position-absolute top-50" data-glide-dir="<"><</button>
-                  </div>
+                    <!--Setinhas do carrousel-->
+                    <div data-glide-el="controls">
+                        <button class="vai btn btn-outline-success position-absolute top-50" data-glide-dir=">">></button>
+                        <button class="vem btn btn-outline-success position-absolute top-50" data-glide-dir="<"><</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!--Blog com carrosel que é ativado apartir de resposividade-->
     <section id="blog">
         <h1 id="blogtit" class="decore">blog</h1>
         <div class="container wrapper2">
@@ -221,15 +257,19 @@
             </div>
         </div>
     </section>
-
+    
+    <!--Footer com todos o detalhes-->
     <footer>
+        <!--Links importantes-->
         <div id="a" class="divisao">
             <img src="./assets/img/primavera.png">
             <a class="links" href="#" data-bs-toggle="modal" data-bs-target="#formulario">entre em contato ></a>
             <a class="links" href="https://wa.me//5519995555840?text=Tenho%20interesse%20em%20comprar%20em%20conhecer%20mais%20produtos!">whatsapp ></a>
             <a class="links" href="#" data-bs-toggle="modal" data-bs-target="#ModalCEP">area de entrega ></a>
-            <a class="links" href="#">duvidas frequentes ></a>
+            <a class="links" href="#">sobre nós ></a>
         </div>
+        
+        <!--Midias Sociais-->
         <div id="b" class="divisao">
             <div id="logos">
                 <a id="midiasocial" href="https://www.instagram.com/artefatos_primavera/"><i class="fa-brands fa-instagram fa-2x"></i></a>
@@ -241,6 +281,8 @@
             </a>
             <a id="termos" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Politica de privacidade | Termos de uso</a>
         </div>
+
+        <!-- Formas de pagamento-->
         <div id="c" class="divisao">
             <h4>Formas de pagamento</h4>
             <div id="cartoes">
@@ -253,54 +295,75 @@
             </div>
         </div>
     </footer>
+
+    <!--Barra de Copyright-->
+    <div id="barra-footer">
+        © Copyright 2023 Primavera - Todos os direitos reservados
+    </div>
+
+    <!--Modal Termos de uso-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Politica de privacidade | Termos de uso</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Politíca de privacidade</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Termos de uso</button>
-                    </li>
-                  </ul>
-                  <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active textterms" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                        <h2><span style="color: rgb(68, 68, 68);">Política Privacidade</span></h2><p><span style="color: rgb(68, 68, 68);">A sua privacidade é importante para nós. É política do primavera.com.br respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="#">primavera.com.br</a>, e outros sites que possuímos e operamos.</span></p><p><span style="color: rgb(68, 68, 68);">Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</span></p><p><span style="color: rgb(68, 68, 68);">Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</span></p><p><span style="color: rgb(68, 68, 68);">Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</span></p><p><span style="color: rgb(68, 68, 68);">O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas&nbsp;</span>políticas de privacidade<span style="color: rgb(68, 68, 68);">.</span></p><p><span style="color: rgb(68, 68, 68);">Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</span></p><p><span style="color: rgb(68, 68, 68);">O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</span></p><p><span style="color: rgb(68, 68, 68);"><ul><li><span style="color: rgb(68, 68, 68);">O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado anúncio é exibido para você.</span></li><li><span style="color: rgb(68, 68, 68);">Para mais informações sobre o Google AdSense, consulte as FAQs oficiais sobre privacidade do Google AdSense.</span></li><li><span style="color: rgb(68, 68, 68);">Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados ​​por este site foram projetados para garantir que você forneça os anúncios mais relevantes sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes que possam ser do seu interesse.</span></li><li><span style="color: rgb(68, 68, 68);">Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra.</span></li></ul><p><br></p></span></p><h3><span style="color: rgb(68, 68, 68);">Compromisso do Usuário</span></h3><p><span style="color: rgb(68, 68, 68);">O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o primavera.com.br oferece no site e com caráter enunciativo, mas não limitativo:</span></p><ul><li><span style="color: rgb(68, 68, 68);">A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</span></li><li><span style="color: rgb(68, 68, 68);">B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, </span><span style="color: rgb(33, 37, 41);"><a href='https://apostasonline.guru/bet365-apostas/' style='color:inherit !important; text-decoration: none !important; font-size: inherit !important;'>bet365 brasil</a></span><span style="color: rgb(68, 68, 68);"> ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</span></li><li><span style="color: rgb(68, 68, 68);">C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do primavera.com.br, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</span></li></ul><h3><span style="color: rgb(68, 68, 68);">Mais informações</span></h3><p><span style="color: rgb(68, 68, 68);">Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</span></p><p><span style="color: rgb(68, 68, 68);">Esta política é efetiva a partir de&nbsp;24 May 2023 18:03</span></p>
+            <div class="modal-content rounded-0">
+                <!--Header modal-->
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Politica de privacidade | Termos de uso</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!--Body Modal-->
+                <div class="modal-body">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Politíca de privacidade</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Termos de uso</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active textterms" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                            <h2><span style="color: rgb(68, 68, 68);">Política Privacidade</span></h2><p><span style="color: rgb(68, 68, 68);">A sua privacidade é importante para nós. É política do primavera.com.br respeitar a sua privacidade em relação a qualquer informação sua que possamos coletar no site <a href="#">primavera.com.br</a>, e outros sites que possuímos e operamos.</span></p><p><span style="color: rgb(68, 68, 68);">Solicitamos informações pessoais apenas quando realmente precisamos delas para lhe fornecer um serviço. Fazemo-lo por meios justos e legais, com o seu conhecimento e consentimento. Também informamos por que estamos coletando e como será usado.</span></p><p><span style="color: rgb(68, 68, 68);">Apenas retemos as informações coletadas pelo tempo necessário para fornecer o serviço solicitado. Quando armazenamos dados, protegemos dentro de meios comercialmente aceitáveis ​​para evitar perdas e roubos, bem como acesso, divulgação, cópia, uso ou modificação não autorizados.</span></p><p><span style="color: rgb(68, 68, 68);">Não compartilhamos informações de identificação pessoal publicamente ou com terceiros, exceto quando exigido por lei.</span></p><p><span style="color: rgb(68, 68, 68);">O nosso site pode ter links para sites externos que não são operados por nós. Esteja ciente de que não temos controle sobre o conteúdo e práticas desses sites e não podemos aceitar responsabilidade por suas respectivas&nbsp;</span>políticas de privacidade<span style="color: rgb(68, 68, 68);">.</span></p><p><span style="color: rgb(68, 68, 68);">Você é livre para recusar a nossa solicitação de informações pessoais, entendendo que talvez não possamos fornecer alguns dos serviços desejados.</span></p><p><span style="color: rgb(68, 68, 68);">O uso continuado de nosso site será considerado como aceitação de nossas práticas em torno de privacidade e informações pessoais. Se você tiver alguma dúvida sobre como lidamos com dados do usuário e informações pessoais, entre em contacto connosco.</span></p><p><span style="color: rgb(68, 68, 68);"><ul><li><span style="color: rgb(68, 68, 68);">O serviço Google AdSense que usamos para veicular publicidade usa um cookie DoubleClick para veicular anúncios mais relevantes em toda a Web e limitar o número de vezes que um determinado anúncio é exibido para você.</span></li><li><span style="color: rgb(68, 68, 68);">Para mais informações sobre o Google AdSense, consulte as FAQs oficiais sobre privacidade do Google AdSense.</span></li><li><span style="color: rgb(68, 68, 68);">Utilizamos anúncios para compensar os custos de funcionamento deste site e fornecer financiamento para futuros desenvolvimentos. Os cookies de publicidade comportamental usados ​​por este site foram projetados para garantir que você forneça os anúncios mais relevantes sempre que possível, rastreando anonimamente seus interesses e apresentando coisas semelhantes que possam ser do seu interesse.</span></li><li><span style="color: rgb(68, 68, 68);">Vários parceiros anunciam em nosso nome e os cookies de rastreamento de afiliados simplesmente nos permitem ver se nossos clientes acessaram o site através de um dos sites de nossos parceiros, para que possamos creditá-los adequadamente e, quando aplicável, permitir que nossos parceiros afiliados ofereçam qualquer promoção que pode fornecê-lo para fazer uma compra.</span></li></ul><p><br></p></span></p><h3><span style="color: rgb(68, 68, 68);">Compromisso do Usuário</span></h3><p><span style="color: rgb(68, 68, 68);">O usuário se compromete a fazer uso adequado dos conteúdos e da informação que o primavera.com.br oferece no site e com caráter enunciativo, mas não limitativo:</span></p><ul><li><span style="color: rgb(68, 68, 68);">A) Não se envolver em atividades que sejam ilegais ou contrárias à boa fé a à ordem pública;</span></li><li><span style="color: rgb(68, 68, 68);">B) Não difundir propaganda ou conteúdo de natureza racista, xenofóbica, </span><span style="color: rgb(33, 37, 41);"><a href='https://apostasonline.guru/bet365-apostas/' style='color:inherit !important; text-decoration: none !important; font-size: inherit !important;'>bet365 brasil</a></span><span style="color: rgb(68, 68, 68);"> ou azar, qualquer tipo de pornografia ilegal, de apologia ao terrorismo ou contra os direitos humanos;</span></li><li><span style="color: rgb(68, 68, 68);">C) Não causar danos aos sistemas físicos (hardwares) e lógicos (softwares) do primavera.com.br, de seus fornecedores ou terceiros, para introduzir ou disseminar vírus informáticos ou quaisquer outros sistemas de hardware ou software que sejam capazes de causar danos anteriormente mencionados.</span></li></ul><h3><span style="color: rgb(68, 68, 68);">Mais informações</span></h3><p><span style="color: rgb(68, 68, 68);">Esperemos que esteja esclarecido e, como mencionado anteriormente, se houver algo que você não tem certeza se precisa ou não, geralmente é mais seguro deixar os cookies ativados, caso interaja com um dos recursos que você usa em nosso site.</span></p><p><span style="color: rgb(68, 68, 68);">Esta política é efetiva a partir de&nbsp;24 May 2023 18:03</span></p>
+                        </div>
+                        <div class="tab-pane fade textterms" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+                            <h2><span style="color: rgb(68, 68, 68);">1. Termos</span></h2><p><span style="color: rgb(68, 68, 68);">Ao acessar ao site <a href="#">primavera.com.br</a>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</span></p><h2><span style="color: rgb(68, 68, 68);">2. Uso de Licença</span></h2><p><span style="color: rgb(68, 68, 68);">É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site primavera.com.br , apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:&nbsp;</span></p><ol><li><span style="color: rgb(68, 68, 68);">modificar ou copiar os materiais;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">tentar descompilar ou fazer engenharia reversa de qualquer software contido no site primavera.com.br;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</span></li></ol><p><span style="color: rgb(68, 68, 68);">Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por primavera.com.br a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrónico ou impresso.</span></p><h2><span style="color: rgb(68, 68, 68);">3. Isenção de responsabilidade</span></h2><ol><li><span style="color: rgb(68, 68, 68);">Os materiais no site da primavera.com.br são fornecidos 'como estão'. primavera.com.br não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</span></li><li><span style="color: rgb(68, 68, 68);">Além disso, o primavera.com.br não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ​​ou à confiabilidade do uso dos materiais em seu site ou de outra forma relacionado a esses materiais ou em sites vinculados a este site.</span></li></ol><h2><span style="color: rgb(68, 68, 68);">4. Limitações</span></h2><p><span style="color: rgb(68, 68, 68);">Em nenhum caso o primavera.com.br ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em primavera.com.br, mesmo que primavera.com.br ou um representante autorizado da primavera.com.br tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos conseqüentes ou incidentais, essas limitações podem não se aplicar a você.</span></p><h2><span style="color: rgb(68, 68, 68);">5. Precisão dos materiais</span></h2><p><span style="color: rgb(68, 68, 68);">Os materiais exibidos no site da primavera.com.br podem incluir erros técnicos, tipográficos ou fotográficos. primavera.com.br não garante que qualquer material em seu site seja preciso, completo ou atual. primavera.com.br pode fazer alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto, primavera.com.br não se compromete a atualizar os materiais.</span></p><h2><span style="color: rgb(68, 68, 68);">6. Links</span></h2><p><span style="color: rgb(68, 68, 68);">O primavera.com.br não analisou todos os sites vinculados ao seu site e não é responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não implica endosso por primavera.com.br do site. O uso de qualquer site vinculado é por conta e risco do usuário.</span></p><p><br></p><h3><span style="color: rgb(68, 68, 68);">Modificações</span></h3><p><span style="color: rgb(68, 68, 68);">O primavera.com.br pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.</span></p><h3><span style="color: rgb(68, 68, 68);">Lei aplicável</span></h3><p><span style="color: rgb(68, 68, 68);">Estes termos e condições são regidos e interpretados de acordo com as leis do primavera.com.br e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.</span></p>
+                        </div>
                     </div>
-                    <div class="tab-pane fade textterms" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
-                        <h2><span style="color: rgb(68, 68, 68);">1. Termos</span></h2><p><span style="color: rgb(68, 68, 68);">Ao acessar ao site <a href="#">primavera.com.br</a>, concorda em cumprir estes termos de serviço, todas as leis e regulamentos aplicáveis ​​e concorda que é responsável pelo cumprimento de todas as leis locais aplicáveis. Se você não concordar com algum desses termos, está proibido de usar ou acessar este site. Os materiais contidos neste site são protegidos pelas leis de direitos autorais e marcas comerciais aplicáveis.</span></p><h2><span style="color: rgb(68, 68, 68);">2. Uso de Licença</span></h2><p><span style="color: rgb(68, 68, 68);">É concedida permissão para baixar temporariamente uma cópia dos materiais (informações ou software) no site primavera.com.br , apenas para visualização transitória pessoal e não comercial. Esta é a concessão de uma licença, não uma transferência de título e, sob esta licença, você não pode:&nbsp;</span></p><ol><li><span style="color: rgb(68, 68, 68);">modificar ou copiar os materiais;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">usar os materiais para qualquer finalidade comercial ou para exibição pública (comercial ou não comercial);&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">tentar descompilar ou fazer engenharia reversa de qualquer software contido no site primavera.com.br;&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">remover quaisquer direitos autorais ou outras notações de propriedade dos materiais; ou&nbsp;</span></li><li><span style="color: rgb(68, 68, 68);">transferir os materiais para outra pessoa ou 'espelhe' os materiais em qualquer outro servidor.</span></li></ol><p><span style="color: rgb(68, 68, 68);">Esta licença será automaticamente rescindida se você violar alguma dessas restrições e poderá ser rescindida por primavera.com.br a qualquer momento. Ao encerrar a visualização desses materiais ou após o término desta licença, você deve apagar todos os materiais baixados em sua posse, seja em formato eletrónico ou impresso.</span></p><h2><span style="color: rgb(68, 68, 68);">3. Isenção de responsabilidade</span></h2><ol><li><span style="color: rgb(68, 68, 68);">Os materiais no site da primavera.com.br são fornecidos 'como estão'. primavera.com.br não oferece garantias, expressas ou implícitas, e, por este meio, isenta e nega todas as outras garantias, incluindo, sem limitação, garantias implícitas ou condições de comercialização, adequação a um fim específico ou não violação de propriedade intelectual ou outra violação de direitos.</span></li><li><span style="color: rgb(68, 68, 68);">Além disso, o primavera.com.br não garante ou faz qualquer representação relativa à precisão, aos resultados prováveis ​​ou à confiabilidade do uso dos materiais em seu site ou de outra forma relacionado a esses materiais ou em sites vinculados a este site.</span></li></ol><h2><span style="color: rgb(68, 68, 68);">4. Limitações</span></h2><p><span style="color: rgb(68, 68, 68);">Em nenhum caso o primavera.com.br ou seus fornecedores serão responsáveis ​​por quaisquer danos (incluindo, sem limitação, danos por perda de dados ou lucro ou devido a interrupção dos negócios) decorrentes do uso ou da incapacidade de usar os materiais em primavera.com.br, mesmo que primavera.com.br ou um representante autorizado da primavera.com.br tenha sido notificado oralmente ou por escrito da possibilidade de tais danos. Como algumas jurisdições não permitem limitações em garantias implícitas, ou limitações de responsabilidade por danos conseqüentes ou incidentais, essas limitações podem não se aplicar a você.</span></p><h2><span style="color: rgb(68, 68, 68);">5. Precisão dos materiais</span></h2><p><span style="color: rgb(68, 68, 68);">Os materiais exibidos no site da primavera.com.br podem incluir erros técnicos, tipográficos ou fotográficos. primavera.com.br não garante que qualquer material em seu site seja preciso, completo ou atual. primavera.com.br pode fazer alterações nos materiais contidos em seu site a qualquer momento, sem aviso prévio. No entanto, primavera.com.br não se compromete a atualizar os materiais.</span></p><h2><span style="color: rgb(68, 68, 68);">6. Links</span></h2><p><span style="color: rgb(68, 68, 68);">O primavera.com.br não analisou todos os sites vinculados ao seu site e não é responsável pelo conteúdo de nenhum site vinculado. A inclusão de qualquer link não implica endosso por primavera.com.br do site. O uso de qualquer site vinculado é por conta e risco do usuário.</span></p><p><br></p><h3><span style="color: rgb(68, 68, 68);">Modificações</span></h3><p><span style="color: rgb(68, 68, 68);">O primavera.com.br pode revisar estes termos de serviço do site a qualquer momento, sem aviso prévio. Ao usar este site, você concorda em ficar vinculado à versão atual desses termos de serviço.</span></p><h3><span style="color: rgb(68, 68, 68);">Lei aplicável</span></h3><p><span style="color: rgb(68, 68, 68);">Estes termos e condições são regidos e interpretados de acordo com as leis do primavera.com.br e você se submete irrevogavelmente à jurisdição exclusiva dos tribunais naquele estado ou localidade.</span></p>
-                    </div>
-                  </div>
+                </div>
+
+                <!--Footer Modal-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">Fechar</button>
+                </div>
             </div>
-            <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-            </div>
-        </div>
         </div>
     </div>
 
+    <!--Modal Area de entrega-->
     <div class="modal fade" id="ModalCEP" tabindex="-1" role="dialog" aria-labelledby="ModalCEP" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-          <div class="modal-content">
+          <div class="modal-content rounded-0">
+
+            <!--Header Modal-->
             <div class="modal-header">
               <h5 class="modal-title" id="ModalCEP">Consulta entrega</h5>
               <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Fechar">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
+
+            <!--Body Modal-->
             <div class="modal-body d-flex justify-content-center flex-column pb-1 align-items-center">
+
+                <!--Formulario consulta-->
                 <form class="mb-4">
                 <label for="CEP">CEP:
                     <input type="text" id="CEP" class="form-control" onkeypress="$(this).mask('00000-000')">
                 </label>
                 <input class="btn btn-outline-success" type="button" value="Enviar" onclick="pesquisarCEP()"/>
                 </form>
+
+                <!--Toasts-->
                 <div class="entrega toast align-items-center mb-3" role="alert" aria-live="assertive" aria-atomic="true">
                     <div class="d-flex">
                       <div class="toast-body">
@@ -326,47 +389,65 @@
                     </div>
                 </div>
             </div>
+
+            <!--Footer Modal-->
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+              <button type="button" class="btn btn-outline-success" data-bs-dismiss="modal">OK</button>
             </div>
+
           </div>
         </div>
     </div>
 
-    <div class="modal fade " id="formulario" tabindex="-1" role="dialog" aria-labelledby="formulario" aria-hidden="true">
+    <!--Modal Entre em contato-->
+    <div class="modal fade" id="formulario" tabindex="-1" role="dialog" aria-labelledby="formulario" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content rounded-0 ">
-            <div class="modal-header">
-              <h5 class="modal-title">entre em contato</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body ">
-                <div class="container text-center">
-                    <div class="row">
-                      <div class="cmap col">
-                        <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1837.7770759490834!2d-47.17199290000004!3d-22.89292269999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b85469f79165%3A0xee9ea3960e6cea8c!2sArtefatos%20De%20Cimento%20Primavera!5e0!3m2!1spt-BR!2sbr!4v1686090578468!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                      </div>
-                      <form onsubmit="abreemail(event); return false" class="col d-flex flex-column" id="emailenvi">
-                            <label for="nome" style="align-self: flex-start;" class="form-label">digite seu nome *</label>
-                            <input oninvalid="erro(this)" required type="text" class="rounded-0 form-control" id="nome" aria-describedby="name">
-                            <label for="exampleFormControlInput1" style="align-self: flex-start;" class="form-label">digite seu email *</label>
-                            <input oninvalid="erro(this)" required type="email" class="form-control rounded-0" id="exampleFormControlInput1">
-                            <div id="emailHelp" class="form-text">Nós nunca vamos compartilhar seus email com ninguem</div>
-                            <label for="exampleFormControlTextarea1" style="align-self: flex-start;" class="form-label">como podemos te ajudar?</label>
-                            <textarea oninvalid="erro(this)" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="9"></textarea>
-                            <button  type="submit" style="align-self: flex-end;" class="rounded-0 btn btn-outline-success">enviar</button>
-                        </form>
+            <div class="modal-content rounded-0">
+                
+                <!--Header Modal-->
+                <div class="modal-header">
+                    <h5 class="modal-title">entre em contato</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+
+                <!--Body Modal-->
+                <div class="modal-body ">
+                    <div class="container text-center">
+                        <div class="row">
+
+                            <!--Mapa-->
+                            <div class="cmap col">
+                                <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1837.7770759490834!2d-47.17199290000004!3d-22.89292269999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b85469f79165%3A0xee9ea3960e6cea8c!2sArtefatos%20De%20Cimento%20Primavera!5e0!3m2!1spt-BR!2sbr!4v1686090578468!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                            <!--Formulario-->
+                            <form onsubmit="abreemail(event); return false" class="col d-flex flex-column" id="emailenvi">
+                                <label for="nome" style="align-self: flex-start;" class="form-label">digite seu nome *</label>
+                                <input oninvalid="erro(this)" required type="text" class="rounded-0 form-control" id="nome" aria-describedby="name">
+                                <label for="exampleFormControlInput1" style="align-self: flex-start;" class="form-label">digite seu email *</label>
+                                <input oninvalid="erro(this)" required type="email" class="form-control rounded-0" id="exampleFormControlInput1">
+                                <div id="emailHelp" class="form-text">Nós nunca vamos compartilhar seus email com ninguem</div>
+                                <label for="exampleFormControlTextarea1" style="align-self: flex-start;" class="form-label">como podemos te ajudar?</label>
+                                <textarea oninvalid="erro(this)" class="form-control rounded-0" id="exampleFormControlTextarea1" rows="9"></textarea>
+                                <button  type="submit" style="align-self: flex-end;" class="rounded-0 btn btn-outline-success">enviar</button>
+                            </form>
+                        </div>
                     </div>
-                  </div>
+                </div>
+
+                <!--Footer Modal-->
+                <div class="modal-footer"></div>
             </div>
-            <div class="modal-footer">
-            </div>
-          </div>
         </div>
       </div>
 
+    <!--Biblioteca Carrousel-->
     <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+    <!--Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    
+    <!--Script Carrousel-->
     <script>
         const config = {
             type: 'carousel',
@@ -387,17 +468,19 @@
                     type: 'carousel',
                     perView:3,
                     touchAngle: 0,
+                    autoplay:false,
                     breakpoints: {
                         1300:{
                             perView: 2,
-                            touchAngle: 45 
-
+                            touchAngle: 45,
+                            autoplay:2000
                         },
                         790:{
                             perView: 1,
-                            touchAngle: 45
+                            touchAngle: 45,
+                            autoplay:2000
                         }
-                    }
+                    },
                 }).mount()
     </script>
 </body>
