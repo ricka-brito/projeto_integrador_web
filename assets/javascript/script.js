@@ -228,7 +228,7 @@ function carrinhof(){
       let strHTML = `
       <div class="produto d-flex" style="max-height: 200px;">
           <div class="bga-mini">
-              <img src="assets/img${carrinhoa[i]["img"].slice(carrinhoa[i]["img"].lastIndexOf("/"))}">
+              <img src="${carrinhoa[i]["img"]}">
           </div>
           <div class="desc p-3 pt-4">
               <p class="nomeprodut">${carrinhoa[i]["nome"]}<button role="button" onclick="excloi(event)" class="btn-excud" href=""><i class="fa-solid fa-circle-xmark"></i></button></p>
@@ -290,7 +290,7 @@ async function itens(){
             </div>
             <h1 onclick="redireciona(event)">${carinho[i]["nome"]}</h1>
             <div class="preco">
-                <p onclick="redireciona(event)"><span>${carinho[i]["preco"]}</span>${carinho[i]["detalhes"]}</p>
+                <p onclick="redireciona(event)"><span>${carinho[i]["preco"]}</span> ${carinho[i]["detalhes"]}</p>
                 <div class="areacompra">
                     <button type="button"  class="btncomprar">comprar</button>
                     <button type="button"  class="btncarrinho" onclick="addcarrinho(this)"><svg   xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M465 443V320H341v-60h124V137h60v123h123v60H525v123h-60ZM289.788 976Q260 976 239 954.788q-21-21.213-21-51Q218 874 239.212 853q21.213-21 51-21Q320 832 341 853.212q21 21.213 21 51Q362 934 340.788 955q-21.213 21-51 21Zm404 0Q664 976 643 954.788q-21-21.213-21-51Q622 874 643.212 853q21.213-21 51-21Q724 832 745 853.212q21 21.213 21 51Q766 934 744.788 955q-21.213 21-51 21ZM290 769q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655 600 634 600H334l-62 109h494v60H290Z"/></svg></button>
@@ -322,7 +322,7 @@ async function itensfiltro(a){
             </div>
             <h1 onclick="redireciona(event)">${carinho[i]["nome"]}</h1>
             <div class="preco">
-                <p onclick="redireciona(event)"><span>${carinho[i]["preco"]}</span>${carinho[i]["detalhes"]}</p>
+                <p onclick="redireciona(event)"><span>${carinho[i]["preco"]}</span> ${carinho[i]["detalhes"]}</p>
                 <div class="areacompra">
                     <button type="button"  class="btncomprar">comprar</button>
                     <button type="button"  class="btncarrinho" onclick="addcarrinho(this)"><svg   xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M465 443V320H341v-60h124V137h60v123h123v60H525v123h-60ZM289.788 976Q260 976 239 954.788q-21-21.213-21-51Q218 874 239.212 853q21.213-21 51-21Q320 832 341 853.212q21 21.213 21 51Q362 934 340.788 955q-21.213 21-51 21Zm404 0Q664 976 643 954.788q-21-21.213-21-51Q622 874 643.212 853q21.213-21 51-21Q724 832 745 853.212q21 21.213 21 51Q766 934 744.788 955q-21.213 21-51 21ZM290 769q-42 0-61.5-34t.5-69l61-111-150-319H62v-60h116l170 364h292l156-280 52 28-153 277q-9.362 16.667-24.681 25.833Q655 600 634 600H334l-62 109h494v60H290Z"/></svg></button>
@@ -536,4 +536,10 @@ function like(e){
 
 async function loadpaginaincial(){
   carrinhoa = cookiescarrinho()
+}
+
+function finaliza(){
+  carrinhoa = []
+  setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
+  carrinhof()
 }

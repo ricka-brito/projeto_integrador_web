@@ -30,7 +30,7 @@
     </button>
 
     <!--Logo do Site-->
-    <img src="./assets/img/primavera.png" alt="" id="primavera">
+    <img onclick="telaincial()" src="./assets/img/primavera.png" alt="" id="primavera">
 
     <!--Lista com links para as outras paginas-->
     <ul>
@@ -67,7 +67,7 @@
                         <h4>total</h4>
                         <p id="valortotal">R$ 0,00</p>
                     </div>
-                    <button class="btn btn-outline-success" style="border-radius: 0; float: right;">Finalizar compra</button>
+                    <button onclick="finaliza()" class="btn btn-outline-success" style="border-radius: 0; float: right;">Finalizar compra</button>
                 </div>
 
             </div>
@@ -99,7 +99,7 @@
 
       <!--Infos do produto-->
       <div id="details">
-        <div class="divnoma d-flex align-items-start"><h1 id="nomea"></h1><i onclick="like(this)" class="fa-regular fa-heart fa-2x mt-2"></i></div>
+        <div class="divnoma d-flex align-items-center"><h1 id="nomea"></h1><i onclick="like(this)" class="fa-regular fa-heart fa-2x"></i></div>
         <h2 id="precospan"></h2>
         <p id="conditions"></p>
 
@@ -174,7 +174,7 @@
         <a class="links" href="#" data-bs-toggle="modal" data-bs-target="#formulario">entre em contato ></a>
         <a class="links" href="https://wa.me//5519995555840?text=Tenho%20interesse%20em%20comprar%20em%20conhecer%20mais%20produtos!">whatsapp ></a>
         <a class="links" href="#" data-bs-toggle="modal" data-bs-target="#ModalCEP">area de entrega ></a>
-        <a class="links" href="#">sobre nós ></a>
+        <a class="links" href="sobrenos.html">sobre nós ></a>
     </div>
     
     <!--Midias Sociais-->
