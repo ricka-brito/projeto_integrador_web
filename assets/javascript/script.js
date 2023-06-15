@@ -253,8 +253,8 @@ function carrinhof(){
 }
 
 // Função que chama a API na azure que contem os produtos
-async function chamaapi(){
-  await fetch("https://primavere.azurewebsites.net/produtos", {
+async function chamaapi(url){
+  await fetch(url, {
     method: 'get'
   })
   .then(function(response) {
@@ -266,7 +266,7 @@ async function chamaapi(){
 // Função que exibe todos os produtos na pagina de produtos
 async function itens(){
   carrinhoa = cookiescarrinho()
-  carinho = await chamaapi()
+  carinho = await chamaapi("https://primavere.azurewebsites.net/produtos")
 
   try {
     carrinhoa = JSON.parse(getCookie("carrinhoa"))
@@ -309,7 +309,7 @@ async function itens(){
 
 // Função que exibe os produtos com filtro de pesquisa
 async function itensfiltro(a){
-  carinho = await chamaapi()
+  carinho = await chamaapi("https://primavere.azurewebsites.net/produtos")
 
   var itensb = $(".galeriaprodutos");
   itensb.empty()
@@ -338,7 +338,7 @@ async function itensfiltro(a){
 
 // Função que redireciona para a pagina de produto individual com ID no url
 async function redireciona(e){
-  carinho = await chamaapi()
+  carinho = await chamaapi("https://primavere.azurewebsites.net/produtos")
 
   switch (e.target.tagName){
     case "H1":
@@ -468,7 +468,7 @@ function infosproduto(){
 // Função que define os valores das tags da pagina de produto individual
 async function definevalores(){
   cookiescarrinho()
-  carinho = await chamaapi()
+  carinho = await chamaapi("https://primavere.azurewebsites.net/produtos")
 
   try {
     carrinhoa = JSON.parse(getCookie("carrinhoa"))
@@ -495,6 +495,8 @@ async function definevalores(){
   document.getElementById("precospan").innerText = carinho[parseInt(id)].preco
   document.getElementById("conditions").innerText = carinho[parseInt(id)].detalhes + " " + document.getElementById("conditions").innerText
   document.getElementById("descp").innerText = carinho[parseInt(id)].descricao
+
+  document.title = carinho[parseInt(id)].nome;
 }
 
 // Função que redireciona para a pagina inicial
@@ -542,4 +544,16 @@ function finaliza(){
   carrinhoa = []
   setCookie("carrinhoa", JSON.stringify(carrinhoa), 10)
   carrinhof()
+}
+
+async function excel(){
+
+  carinho = await chamaapi("https://primavere.azurewebsites.net/excel")
+  filename='reports.xlsx';
+  data=carinho
+  var ws = XLSX.utils.json_to_sheet(data);
+  var wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
+  XLSX.writeFile(wb,filename);
+  
 }
